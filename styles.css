@@ -1,9 +1,15 @@
 body {
-  background-color: powderblue;
+	background-color: powderblue;
 }
 h1 {
-  color: blue;
+	color: blue;
 }
+h1.title {
+	font-family: Helvetica, sans-serif;
+	font-size: 300%;
+	margin-left: 30px;
+}
+
 p {
   color: red;
 }
