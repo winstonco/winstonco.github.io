@@ -15,7 +15,8 @@ h1 {
   font-size: 4em;
   padding-left: 0px;
 }
-.title h3 {
+.subtitle {
+  font-size: 3em;
   padding-left: 3em;
 }
 .main {
