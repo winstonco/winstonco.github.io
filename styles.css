@@ -1,17 +1,17 @@
 body {
-	font-family: Helvetica, sans-serif;
-	background-color: white;
+  font-family: Helvetica, sans-serif;
+  background-color: white;
 }
 h1 {
-	color: blue;
+  color: blue;
 }
 h1.title {
-	font-size: 300%;
-	margin-left: 30px;
+  font-size: 300%;
+  margin-left: 30px;
 }
 h3.subtitle {
-	font-size: 300%;
-	margin-left: 50px;
+  font-size: 300%;
+  margin-left: 50px;
 }
 
 p {
