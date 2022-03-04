@@ -7,7 +7,7 @@ body {
 h1 {
   color: White;
 }
-.title {
+#title {
   line-height: 100%;
   margin: 0px;
   color: White;
@@ -15,7 +15,7 @@ h1 {
   font-size: 4em;
   padding-left: 0px;
 }
-.subtitle {
+#subtitle {
   font-size: 3em;
   padding-left: 3em;
 }
