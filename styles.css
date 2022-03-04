@@ -1,6 +1,7 @@
 body {
   font-family: Helvetica, sans-serif;
   background-color: White;
+  font-size: 100%;
 }
 h1 {
   color: White;
@@ -8,10 +9,12 @@ h1 {
 .title {
   color: White;
   background-color: Black;
-  font-size: 300%;
+  font-size: 4em;
   margin-left: 30px;
 }
-
+.title h3 {
+  
+}
 p {
   color: Black;
 }
