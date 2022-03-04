@@ -7,15 +7,15 @@ h1 {
   color: White;
 }
 .title {
-  line-height: 4em;
+  line-height: 50%;
   margin: 0px;
   color: White;
   background-color: Black;
   font-size: 4em;
-  padding-left: 10em;
+  padding-left: 0px;
 }
 .title h3 {
-  padding: 60px;
+  padding: 3em;
 }
 .main {
   margin-left: 20px;
