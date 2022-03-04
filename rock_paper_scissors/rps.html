@@ -1,0 +1,202 @@
+<!--
+Winston Co
+12/22/2020
+Rock, Paper, Scissors Project
+w/ Data "Analysis"
+-->
+
+<!DOCTYPE html>
+<html>
+<head> <!-- Normal Game of Rock, Paper, Scissors against RNG -->
+    <link type="text/css" rel="stylesheet" href="rps.css">
+    <script src="https://kit.fontawesome.com/4e644fd1b8.js" crossorigin="anonymous"></script> <!-- Source of icons -->
+    <h1>Rock, Paper, Scissors</h1>
+    <hr>
+    <h2>Play</h2>
+    <button type="button" onclick="choiceMade(0)" width="100px">
+        <i class="far fa-hand-rock fa-3x fa-fw"></i><br>Rock
+    </button>
+    <button type="button" onclick="choiceMade(1)">
+        <i class="far fa-hand-paper fa-3x fa-fw"></i><br>Paper
+    </button>
+    <button type="button" onclick="choiceMade(2)">
+        <i class="far fa-hand-scissors fa-3x fa-fw"></i><br>Scissors
+    </button>
+    <p id="choice">Choice:</p>
+    <p id="oppoChoice">Opponent:</p>
+    <p id="result">Click a button!</p>
+</head>
+
+<body> <!-- Stats for nerds: # of wins, losses, draws; winrate; play a lot button; reset -->
+    <h2>Stats</h2>
+    <p>Win/Loss/Draw</p>
+    <p id="wld">0 / 0 / 0</p>
+    <p id="wr">Win Rate:</p>
+    <form>
+        <label for="quantity">Play Many:</label>
+        <input type="number" id="quantity" name="quantity" min="1">
+        <button type="button" onclick="playMany(document.getElementById('quantity').value)">Go!</button>
+    </form>
+    <button type="button" onclick="reset()">Reset</button>
+</body>
+
+<h2>Graph</h2> <!-- Graph setup using chartjs -->
+<canvas id="myChart" width="400" height="150"></canvas>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+<script>
+// Create chart function using chartjs
+const ctx = document.getElementById('myChart');
+// Empty arrays for x and y data sets
+var xdata = [];
+var ydata = [];
+// Charting function
+function plotWR() {
+    const myLineChart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: xdata,
+            datasets: [{
+                label: 'Win Percentage (decimal)',
+                backgroundColor: 'rgb(255, 153, 51)',
+                borderColor: 'rgb(255, 153, 51)',
+                fill: false,
+                lineTension: .3,
+                data: ydata,
+                maintainAspectRatio: false
+            }]
+        },
+        options: {
+            animation: {
+                duration: 0
+            },
+            layout: {
+                padding: {
+                    left: 20,
+                    right: 20,
+                }
+            },
+            scales: {
+                xAxes: [{
+                    ticks: {
+                        maxTicksLimit: 10
+                    }
+                }],
+                yAxes: [{
+                    ticks: {
+                        min: 0,
+                        max: 1,
+                        maxTicksLimit: 6
+                    }
+                }]
+            }
+        }
+    });
+}
+</script>
+
+<script>
+// Startup: declare variables, create graph
+var wins = 0;
+var losses = 0;
+var draws = 0;
+var playcount = 0;
+var winrate = 0;
+plotWR();
+
+// Set variables to 0, and reset some text (to be fancy)
+function reset() {
+    wins = 0;
+    losses = 0;
+    draws = 0;
+    playcount = 0;
+    winrate = 0;
+    xdata = [];
+    ydata = [];
+    plotWR();
+
+    document.getElementById("wld").innerHTML = wins+" / " + losses + " / " + draws;
+    document.getElementById("wr").innerHTML = "Win Rate: " + (winrate*100).toPrecision(5) + "%";
+    document.getElementById("choice").innerHTML = "Choice:";
+    document.getElementById("oppoChoice").innerHTML = "Opponent:";
+    document.getElementById("result").innerHTML = "Click a button!";
+}
+</script>
+
+<script>
+// Function when you select rock, paper, or scissors
+function choiceMade(c) {
+    playcount++;
+    // Random opponent choice from 0-2, rock/paper/scissors
+    var o = Math.floor(Math.random() * 3);
+
+    var oppoChoice = document.getElementById("oppoChoice");
+    var choice = document.getElementById("choice");
+    var result = document.getElementById("result");
+
+    // Show what the CPU chose
+    switch(o) {
+        case 0:
+            oppoChoice.innerHTML = "Opponent: Rock";
+            break;
+        case 1:
+            oppoChoice.innerHTML = "Opponent: Paper";
+            break;
+        case 2:
+            oppoChoice.innerHTML = "Opponent: Scissors";
+            break;
+    }
+
+    // Show what you chose
+    switch(c) {
+        case 0:
+            choice.innerHTML = "Choice: Rock";
+            break;
+        case 1:
+            choice.innerHTML = "Choice: Paper";
+            break;
+        case 2:
+            choice.innerHTML = "Choice: Scissors";
+            break;
+    }
+    
+    // All possible outcomes
+    switch(true) {
+        case (c === o):
+            outcome = "DRAW";
+            draws++;
+            break;
+        case (c === 0) && (o === 1):
+        case (c === 1) && (o === 2):
+        case (c === 2) && (o === 0):
+            outcome = "YOU LOSE";
+            losses++;
+            break;
+        case (c === 0) && (o === 2):
+        case (c === 1) && (o === 0):
+        case (c === 2) && (o === 1):
+            outcome = "YOU WIN";
+            wins++;
+            break;
+    }
+    // Change elements on the website
+    result.innerHTML = outcome;
+    document.getElementById("wld").innerHTML = wins+" / " + losses + " / " + draws;
+    winrate = wins/playcount;
+    document.getElementById("wr").innerHTML = "Win Rate: " + (winrate*100).toPrecision(5) + "%";
+
+    // Add to the x and y datasets
+    xdata.push(playcount);
+    ydata.push(winrate);
+
+    plotWR();
+}
+
+// Function to add many plays, randomly generated, for data
+function playMany(n) {
+    for (i = 0; i < n; i++) {
+        choiceMade(Math.floor(Math.random() * 3));
+    }
+}
+</script>
+</html>
