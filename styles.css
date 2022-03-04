@@ -6,38 +6,69 @@
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  font-family: 'Open Sans', sans-serif;
+  font-size: normal;
 }
 html, body {
   height: 100%;
+  margin: 0;
 }
 body {
-  font-family: 'Open Sans', sans-serif;
   font-weight: normal;
-  font-size: 100%;
-  margin: 0%;
 }
-.header-area {
-  font-weight: bold;
-  height: 80%;
+.header-page {
+  height: 110%;
   margin: 0px;
-  padding-top: 20%;
   padding-left: 5%;
+  padding-right: 5%;
   background-color: Black;
   color: White;
 }
+.header-upper {
+  padding-top: 30%;
+  padding-bottom: 30%;
+}
 #title {
   font-size: 6em;
-  line-height: 110%;
+  font-weight: bold;
+  line-height: 120%;
   padding-left: 0px;
 }
 #subtitle {
-  font-size: 2em;
   padding-left: 3em;
+  color: White;
+  font-size: 2em;
+}
+.header-lower {
+  position: absolute;
+  bottom: -10%;
+  margin-bottom: 0;
+  font-size: 3em;
+  font-weight: bold;
 }
 .main {
-  margin-left: 20px;
+  font-weight: normal;
+  padding-top: 1%;
+  padding-left: 5%;
+  padding-right: 5%;
+  padding-bottom: 1%;
   background-color: White;
+}
+.main p {
+  font-size: 1.5em;
+}
+#wip {
+  background-color: LightSteelBlue;
+  margin: 0%;
+  padding: 0%;
+  padding-top: 5%;
+  height: 20%;
+  text-align: center;
+  font-size: 1.5em;
 }
 p {
   color: Black;
+}
+h1 {
+  font-weight: normal;
 }
