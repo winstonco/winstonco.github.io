@@ -2,12 +2,13 @@ body {
   font-family: Helvetica, sans-serif;
   background-color: White;
   font-size: 100%;
+  margin: 0%;
 }
 h1 {
   color: White;
 }
 .title {
-  line-height: 50%;
+  line-height: 100%;
   margin: 0px;
   color: White;
   background-color: Black;
