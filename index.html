@@ -1,33 +1,58 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Winston's Site</title>
-    <link rel="stylesheet" href="css/mainStyles.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet"></head>
-  <body>
-    <div class="header-page">
-      <div class="header-upper">
-        <h1 id="title">Hi, I'm Winston.</h1>
-        <p id="subtitle">Welcome to my site!</p>
-      </div>
-      <div class="header-lower">
-        <h3>About Me</h3>
-      </div>
+
+<head>
+  <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Winston's Site</title>
+  <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+  <!-- Intro screen is the black screen at the start -->
+  <div id="intro_screen">
+    <div id="header_upper">
+      <h1 id="title">Hi, I'm Winston.</h1>
+      <p id="subtitle">Welcome to my site!</p>
     </div>
-    <div class="main">
-      <p id="about-me">
-        I'm a freshman student at the University of Hawai'i at Manoa. Yada yada...
-        I do this and that and things. I can also do stuff. <A HREF="rock_paper_scissors/rps">a link</A>
+    <div id="header_lower">
+      <h3>About Me</h3>
+    </div>
+  </div>
+  <div id="main">
+    <!-- About me section -->
+    <div id="about_me">
+      <!-- Self introduction -->
+      <p>
+        I'm a junior at the University of Hawai'i at Manoa, majoring in Computer Science. I love playing games in my
+        free time, and my dream is to become a developer and create the things I love. This is a website that I built
+        from scratch to hold anything I wish to share, so have a look around!
+      </p>
+      <!-- Projects (article_title class) -->
+      <h3 class="subsection_title">Projects:</h3>
+      <hr>
+      <!-- This website -->
+      <A HREF="index.html" class="article_title">This Website!</A>
+      <p>
+        This is my first time building a website from scratch, though I've learned some HTML and CSS in the past. I am
+        currently learning about Sass, Node, and Bootstrap, hoping to implement them to create an eye-catching,
+        responsive website.
+      </p>
+      <!-- Rock, Paper, Scissors -->
+      <A HREF="rps.html" class="article_title">Rock, Paper, Scissors</A>
+      <p>
+        On December 22, 2020, I made one of my first projects, using inline JavaScript! It's a simple game of "Rock,
+        Paper, Scissors" with some added features. It's definitely not the prettiest website ever made.
       </p>
     </div>
+
+    <!-- Blue work in progress section -->
     <div id="wip">
       <p>You've reached the end,</p>
       <p>but don't worry. The website</p>
       <p>is still in progress!</p>
       🛠️
     </div>
-  </body>
+  </div>
+</body>
+
 </html>

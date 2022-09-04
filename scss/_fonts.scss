@@ -1,0 +1,31 @@
+// Main website font: Open Sans
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+$bold: 900;
+$normal: 400;
+$light: 300;
+
+.text {
+  &__light {
+    font-weight: $light;
+  }
+  &__normal {
+    font-weight: $normal;
+  }
+  &__bold {
+    font-weight: $bold;
+  }
+}
+
+.article_title {
+  font-weight: $bold;
+  font-size: 1.1em;
+  text-decoration: underline;
+  color: black;
+}
+
+.subsection_title {
+  font-weight: $bold;
+  font-size: 1.5em;
+  margin-top: 2em;
+}
