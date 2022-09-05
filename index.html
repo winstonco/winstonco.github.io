@@ -9,49 +9,60 @@
 
 <body>
   <!-- Intro screen is the black screen at the start -->
-  <div id="intro_screen">
-    <div id="header_upper">
-      <h1 id="title">Hi, I'm Winston.</h1>
-      <p id="subtitle">Welcome to my site!</p>
+  <div class="intro_screen">
+    <div class="top">
+      <h1 class="top_title">Hi, I'm Winston.</h1>
+      <p class="top_subtitle">Welcome to my site!</p>
+      <div class="triangle">
+        <div class="triangle-down"></div>
+      </div>
     </div>
-    <div id="header_lower">
-      <h3>About Me</h3>
+    <h3 class="subsection_title">About Me</h3>
+  </div>
+  <div class="main">
+    <!-- About me section -->
+    <div class="about_me">
+      <!-- Self introduction -->
+      <div class="introduction">
+        <img src="img/Training_Bot.png" alt="Temporary Image">
+        <p>
+          I'm a junior at the University of Hawai'i at Manoa, majoring in Computer Science. I love playing games in my
+          free time, and my dream is to become a developer and create the things I love. This is a website that I built
+          from scratch to hold anything I wish to share, so have a look around!
+        </p>
+      </div>
+      <!-- Projects (article_title class) -->
+      <div class="projects">
+        <h3 class="subsection_title">Projects</h3>
+        <hr>
+        <!-- This website -->
+        <A HREF="index.html" class="article_title">This Website!</A>
+        <div class="projects_description">
+          <p>
+            This is my first time building a website from scratch, though I've learned some HTML and CSS in the past. I am
+            currently learning about Sass, Node, and Bootstrap, hoping to implement them to create an eye-catching,
+            responsive website.
+          </p>
+          <img src="img/Hmm.png" alt="Temporary Image">
+        </div>
+        <!-- Rock, Paper, Scissors -->
+        <A HREF="rps.html" class="article_title">Rock, Paper, Scissors</A>
+        <div class="projects_description">
+          <p>
+            On December 22, 2020, I made one of my first projects, using inline JavaScript! It's a simple game of "Rock,
+            Paper, Scissors" with some added features. It's definitely not the prettiest website ever made.
+          </p>
+          <img src="img/BatChest.png" alt="Temporary Image">
+        </div>
+      </div>
     </div>
   </div>
-  <div id="main">
-    <!-- About me section -->
-    <div id="about_me">
-      <!-- Self introduction -->
-      <p>
-        I'm a junior at the University of Hawai'i at Manoa, majoring in Computer Science. I love playing games in my
-        free time, and my dream is to become a developer and create the things I love. This is a website that I built
-        from scratch to hold anything I wish to share, so have a look around!
-      </p>
-      <!-- Projects (article_title class) -->
-      <h3 class="subsection_title">Projects:</h3>
-      <hr>
-      <!-- This website -->
-      <A HREF="index.html" class="article_title">This Website!</A>
-      <p>
-        This is my first time building a website from scratch, though I've learned some HTML and CSS in the past. I am
-        currently learning about Sass, Node, and Bootstrap, hoping to implement them to create an eye-catching,
-        responsive website.
-      </p>
-      <!-- Rock, Paper, Scissors -->
-      <A HREF="rps.html" class="article_title">Rock, Paper, Scissors</A>
-      <p>
-        On December 22, 2020, I made one of my first projects, using inline JavaScript! It's a simple game of "Rock,
-        Paper, Scissors" with some added features. It's definitely not the prettiest website ever made.
-      </p>
-    </div>
-
-    <!-- Blue work in progress section -->
-    <div id="wip">
-      <p>You've reached the end,</p>
-      <p>but don't worry. The website</p>
-      <p>is still in progress!</p>
-      🛠️
-    </div>
+  <!-- Blue work in progress section -->
+  <div class="wip">
+    <p>You've reached the end,</p>
+    <p>but don't worry. The website</p>
+    <p>is still in progress!</p>
+    🛠️
   </div>
 </body>
 

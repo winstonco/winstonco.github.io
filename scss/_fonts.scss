@@ -19,13 +19,29 @@ $light: 300;
 
 .article_title {
   font-weight: $bold;
-  font-size: 1.1em;
+  font-size: 2rem;
   text-decoration: underline;
   color: black;
 }
 
 .subsection_title {
   font-weight: $bold;
-  font-size: 1.5em;
-  margin-top: 2em;
+  font-size: 3rem;
+}
+
+@mixin article_title {
+  font-weight: $bold;
+  font-size: 1.1rem;
+  text-decoration: underline;
+  color: black;
+}
+
+@mixin subsection_title {
+  font-weight: $bold;
+  font-size: 3rem;
+}
+
+@mixin normal_text {
+  font-size: 1.5rem;
+  font-weight: $normal;
 }

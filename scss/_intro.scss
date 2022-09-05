@@ -1,0 +1,43 @@
+.intro_screen {
+  font-size: normal;
+  margin: 0px;
+  padding-left: 5%;
+  padding-right: 5%;
+  background-color: Black;
+  color: White;
+
+  .top {
+    height: 100vh;
+
+    &_title {
+      font-size: 6rem;
+      font-weight: $bold;
+      line-height: 120%;
+      padding-left: 0px;
+    }
+    &_subtitle {
+      padding-left: 3rem;
+      color: White;
+      font-size: 2rem;
+    }
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .triangle {
+      position: absolute;
+      padding-left: 0%;
+      padding-right: 0%;
+      width: 90%;
+      height: 2rem;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      bottom: 0;
+      animation: blinker 2s steps(1, end) infinite;
+    }
+  }
+  h3 {
+    text-align: center;
+  }
+}
