@@ -4,10 +4,20 @@
   }
 }
 
-.triangle-down {
+.triangle_down {
 	width: 0;
 	height: 0;
 	border-left: 1.5rem solid transparent;
 	border-right: 1.5rem solid transparent;
 	border-top: 2rem solid white;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: $background;
+}
+::-webkit-scrollbar-thumb {
+  background: $secondary;
 }

@@ -1,43 +1,65 @@
 .intro_screen {
   font-size: normal;
   margin: 0px;
-  padding-left: 5%;
-  padding-right: 5%;
-  background-color: Black;
-  color: White;
+  background-color: $primary;
+  color: $background;
+  width: 100vw;
+  position: fixed;
+  bottom: -8vh;
+  overflow-y: hidden;
 
-  .top {
-    height: 100vh;
-
-    &_title {
+  .fulltitle {
+    height: 95vh;
+    padding-left: 5%;
+    .title {
       font-size: 6rem;
       font-weight: $bold;
       line-height: 120%;
       padding-left: 0px;
     }
-    &_subtitle {
+    .subtitle {
       padding-left: 3rem;
-      color: White;
+      color: $background;
       font-size: 2rem;
     }
     display: flex;
     flex-direction: column;
     justify-content: center;
+  }
+  #triangle_wrapper {
+    width: 100vw;
+    height: 5vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: $background;
 
-    .triangle {
-      position: absolute;
-      padding-left: 0%;
-      padding-right: 0%;
-      width: 90%;
-      height: 2rem;
-      display: flex;
-      flex-direction: row;
-      justify-content: center;
-      bottom: 0;
-      animation: blinker 2s steps(1, end) infinite;
+    .triangle_down {
+      border-top-color: $primary;
+      //animation: blinker 2s steps(1, end) infinite;
+      animation: blinker 2s infinite;
+    }
+    .pointUp {
+      transform: rotate(180deg);
+    }
+
+    &:hover {
+      background-color: darken($background, 5%);
     }
   }
-  h3 {
-    text-align: center;
+  .about_me {
+    background-color: $background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 8vh;
+    h3 {
+      width: 60%;
+      height: 100%;
+      text-align: center;
+      color: $primary;
+      border-bottom: 2px solid $primary;
+    }
   }
 }

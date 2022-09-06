@@ -10,21 +10,23 @@
 <body>
   <!-- Intro screen is the black screen at the start -->
   <div class="intro_screen">
-    <div class="top">
-      <h1 class="top_title">Hi, I'm Winston.</h1>
-      <p class="top_subtitle">Welcome to my site!</p>
-      <div class="triangle">
-        <div class="triangle-down"></div>
+      <div class="fulltitle">
+        <h1 class="title">Hi, I'm Winston.</h1>
+        <p class="subtitle">Welcome to my site!</p>
       </div>
+    <div id="triangle_wrapper">
+      <div class="triangle_down pointUp" id="intro_triangle"></div>
     </div>
-    <h3 class="subsection_title">About Me</h3>
+    <div class="about_me">
+      <h3 class="subsection_title">About Me</h3>
+    </div>
   </div>
   <div class="main">
     <!-- About me section -->
-    <div class="about_me">
+    <div class="about_me_text">
       <!-- Self introduction -->
       <div class="introduction">
-        <img src="img/Training_Bot.png" alt="Temporary Image">
+        <img src="img/portrait.png" alt="Temporary Image">
         <p>
           I'm a junior at the University of Hawai'i at Manoa, majoring in Computer Science. I love playing games in my
           free time, and my dream is to become a developer and create the things I love. This is a website that I built
@@ -43,7 +45,6 @@
             currently learning about Sass, Node, and Bootstrap, hoping to implement them to create an eye-catching,
             responsive website.
           </p>
-          <img src="img/Hmm.png" alt="Temporary Image">
         </div>
         <!-- Rock, Paper, Scissors -->
         <A HREF="rps.html" class="article_title">Rock, Paper, Scissors</A>
@@ -52,7 +53,6 @@
             On December 22, 2020, I made one of my first projects, using inline JavaScript! It's a simple game of "Rock,
             Paper, Scissors" with some added features. It's definitely not the prettiest website ever made.
           </p>
-          <img src="img/BatChest.png" alt="Temporary Image">
         </div>
       </div>
     </div>
@@ -64,6 +64,8 @@
     <p>is still in progress!</p>
     🛠️
   </div>
+
+  <script src="js/main.js"></script>
 </body>
 
 </html>

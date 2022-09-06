@@ -21,27 +21,30 @@ $light: 300;
   font-weight: $bold;
   font-size: 2rem;
   text-decoration: underline;
-  color: black;
+  color: $primary;
 }
 
 .subsection_title {
   font-weight: $bold;
   font-size: 3rem;
+  color: $primary;
 }
 
 @mixin article_title {
   font-weight: $bold;
   font-size: 1.1rem;
   text-decoration: underline;
-  color: black;
+  color: $primary;
 }
 
 @mixin subsection_title {
   font-weight: $bold;
   font-size: 3rem;
+  color: $primary;
 }
 
 @mixin normal_text {
   font-size: 1.5rem;
   font-weight: $normal;
+  color: $primary;
 }
