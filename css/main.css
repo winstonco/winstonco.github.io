@@ -2,11 +2,9 @@
 .text__light {
   font-weight: 300;
 }
-
 .text__normal {
   font-weight: 400;
 }
-
 .text__bold {
   font-weight: 900;
 }
@@ -41,13 +39,12 @@
     opacity: 0;
   }
 }
-
 .triangle_down {
   width: 0;
   height: 0;
-  border-left: 1.5rem solid transparent;
-  border-right: 1.5rem solid transparent;
-  border-top: 2rem solid white;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 20px solid white;
 }
 
 ::-webkit-scrollbar {
@@ -63,16 +60,14 @@
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: normal;
   background-color: #fcfaf3;
 }
-
 body html {
   height: 100%;
   margin: 0;
 }
-
 body p {
   color: #181d2a;
 }
@@ -87,7 +82,6 @@ body p {
   bottom: -8vh;
   overflow-y: hidden;
 }
-
 .intro_screen .fulltitle {
   height: 95vh;
   padding-left: 5%;
@@ -95,21 +89,18 @@ body p {
   flex-direction: column;
   justify-content: center;
 }
-
 .intro_screen .fulltitle .title {
   font-size: 6rem;
   font-weight: 900;
   line-height: 120%;
   padding-left: 0px;
 }
-
 .intro_screen .fulltitle .subtitle {
   padding-left: 3rem;
   color: #fcfaf3;
   font-size: 2rem;
 }
-
-.intro_screen #triangle_wrapper {
+.intro_screen #intro_triangle_wrapper {
   width: 100vw;
   height: 5vh;
   display: flex;
@@ -118,20 +109,19 @@ body p {
   align-items: center;
   background-color: #fcfaf3;
 }
-
-.intro_screen #triangle_wrapper .triangle_down {
+.intro_screen #intro_triangle_wrapper .triangle_down {
   border-top-color: #181d2a;
+  border-top-width: 3vh;
+  border-left-width: 2vh;
+  border-right-width: 2vh;
   animation: blinker 2s infinite;
 }
-
-.intro_screen #triangle_wrapper .pointUp {
+.intro_screen #intro_triangle_wrapper .pointUp {
   transform: rotate(180deg);
 }
-
-.intro_screen #triangle_wrapper:hover {
-  background-color: #f7f2df;
+.intro_screen #intro_triangle_wrapper:hover {
+  background-color: #f2e9ca;
 }
-
 .intro_screen .about_me {
   background-color: #fcfaf3;
   display: flex;
@@ -139,7 +129,6 @@ body p {
   align-items: center;
   height: 8vh;
 }
-
 .intro_screen .about_me h3 {
   width: 60%;
   height: 100%;
@@ -157,35 +146,29 @@ body p {
   flex-direction: column;
   align-items: center;
 }
-
 .main .about_me_text p {
   font-size: 1.5rem;
   font-weight: 400;
   color: #181d2a;
   margin-bottom: 1rem;
 }
-
 .main .introduction {
   text-align: center;
   width: 50%;
   margin-bottom: 5rem;
 }
-
 .main .introduction img {
   width: 500px;
   height: 350px;
   object-fit: cover;
   object-position: 10% 40%;
 }
-
 .main .projects {
   width: 70%;
 }
-
 .main .projects .subsection_title {
   text-align: center;
 }
-
 .main .projects hr {
   display: block;
   margin-top: 0.5rem;
@@ -201,12 +184,11 @@ body p {
   font-size: 1.5rem;
   font-weight: 400;
   color: #181d2a;
-  background-color: #c1ddf3;
+  background-color: rgb(193, 221, 243);
   margin: 0%;
   padding: 0%;
   padding-top: 5%;
   padding-bottom: 2%;
   height: 20%;
   text-align: center;
-}
-/*# sourceMappingURL=main.css.map */
+}/*# sourceMappingURL=main.css.map */

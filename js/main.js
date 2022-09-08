@@ -1,4 +1,4 @@
-const triangle_wrapper = document.getElementById('triangle_wrapper');
+const triangle_wrapper = document.getElementById('intro_triangle_wrapper');
 const intro_triangle = document.getElementById('intro_triangle');
 // if the intro screen is up
 var isUp = false;
