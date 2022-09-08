@@ -40,15 +40,16 @@
       border-top-width: 3vh;
       border-left-width: 2vh;
       border-right-width: 2vh;
-      //animation: blinker 2s steps(1, end) infinite;
-      animation: blinker 2s infinite;
     }
     .pointUp {
       transform: rotate(180deg);
     }
-
     &:hover {
       background-color: darken($background, 10%);
+
+      #intro_triangle {
+        animation: blinker 1.5s infinite;
+      }
     }
   }
   .about_me {

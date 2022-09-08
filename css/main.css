@@ -35,7 +35,7 @@
 }
 
 @keyframes blinker {
-  33% {
+  50% {
     opacity: 0;
   }
 }
@@ -114,13 +114,15 @@ body p {
   border-top-width: 3vh;
   border-left-width: 2vh;
   border-right-width: 2vh;
-  animation: blinker 2s infinite;
 }
 .intro_screen #intro_triangle_wrapper .pointUp {
   transform: rotate(180deg);
 }
 .intro_screen #intro_triangle_wrapper:hover {
   background-color: #f2e9ca;
+}
+.intro_screen #intro_triangle_wrapper:hover #intro_triangle {
+  animation: blinker 1.5s infinite;
 }
 .intro_screen .about_me {
   background-color: #fcfaf3;
