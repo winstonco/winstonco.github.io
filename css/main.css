@@ -140,7 +140,7 @@ body p {
 }
 
 .main .about_me_text {
-  padding-top: 10%;
+  padding-top: 1%;
   width: 70%;
   margin-left: 15%;
   padding-bottom: 1%;
@@ -157,11 +157,12 @@ body p {
 .main .introduction {
   text-align: center;
   width: 50%;
+  margin-top: 20vh;
   margin-bottom: 5rem;
 }
 .main .introduction img {
-  width: 500px;
-  height: 350px;
+  width: 25vw;
+  height: 17vw;
   object-fit: cover;
   object-position: 10% 40%;
 }
