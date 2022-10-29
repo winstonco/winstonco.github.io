@@ -1,4 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+.color-primary {
+  color: #181d2a;
+}
+
+.color-secondary {
+  color: #014483;
+}
+
+.back-primary {
+  background-color: #fcfaf3;
+}
+
+.back-secondary {
+  background-color: rgb(193, 221, 243);
+}
+
+.text {
+  font-size: 1rem;
+}
 .text__light {
   font-weight: 300;
 }
@@ -6,20 +25,42 @@
   font-weight: 400;
 }
 .text__bold {
-  font-weight: 900;
+  font-weight: 700;
 }
 
-.article_title {
-  font-weight: 900;
+.font-title {
+  font-size: 6rem;
+}
+
+.font-subtitle {
+  font-size: 2rem;
+}
+
+.font-article-title {
+  font-weight: 700;
   font-size: 2rem;
   text-decoration: underline;
   color: #181d2a;
 }
 
-.subsection_title {
-  font-weight: 900;
+.font-date {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: #50608b;
+}
+
+.font-subsection-title {
+  font-weight: 700;
   font-size: 3rem;
   color: #181d2a;
+}
+
+#very {
+  font-size: 1.5rem;
+  font-weight: 700;
+  font-family: "Courier New", Courier, monospace;
+  position: relative;
+  bottom: 2px;
 }
 
 * {
@@ -27,16 +68,16 @@
   padding: 0;
   border: 0;
   outline: 0;
-  font-size: 100%;
   vertical-align: baseline;
   background: transparent;
   font-size: normal;
   font: inherit;
+  border-radius: 0 !important;
 }
 
 @keyframes blinker {
   50% {
-    opacity: 0;
+    opacity: 10%;
   }
 }
 .triangle_down {
@@ -62,13 +103,7 @@
 body {
   font-family: "Open Sans", sans-serif;
   font-weight: normal;
-  background-color: #fcfaf3;
-}
-body html {
-  height: 100%;
-  margin: 0;
-}
-body p {
+  background-color: #fcfaf3 !important;
   color: #181d2a;
 }
 
@@ -79,7 +114,7 @@ body p {
   color: #fcfaf3;
   width: 100vw;
   position: fixed;
-  bottom: -8vh;
+  bottom: 0;
   overflow-y: hidden;
 }
 .intro_screen .fulltitle {
@@ -90,15 +125,11 @@ body p {
   justify-content: center;
 }
 .intro_screen .fulltitle .title {
-  font-size: 6rem;
-  font-weight: 900;
   line-height: 120%;
   padding-left: 0px;
 }
 .intro_screen .fulltitle .subtitle {
   padding-left: 3rem;
-  color: #fcfaf3;
-  font-size: 2rem;
 }
 .intro_screen #intro_triangle_wrapper {
   width: 100vw;
@@ -141,7 +172,6 @@ body p {
 
 .main .about_me_text {
   padding-top: 1%;
-  width: 70%;
   margin-left: 15%;
   padding-bottom: 1%;
   display: flex;
@@ -149,14 +179,13 @@ body p {
   align-items: center;
 }
 .main .about_me_text p {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color: #181d2a;
   margin-bottom: 1rem;
 }
 .main .introduction {
   text-align: center;
-  width: 50%;
   margin-top: 20vh;
   margin-bottom: 5rem;
 }
@@ -184,7 +213,7 @@ body p {
 }
 
 .wip {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 400;
   color: #181d2a;
   background-color: rgb(193, 221, 243);

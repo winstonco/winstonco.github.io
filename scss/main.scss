@@ -3,14 +3,8 @@
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: normal;
-  background-color: $background;
-  html {
-    height: 100%;
-    margin: 0;
-  }
-  p {
-    color: $primary;
-  }
+  background-color: $background !important;
+  color: $primary;
 }
 
 @import './intro';

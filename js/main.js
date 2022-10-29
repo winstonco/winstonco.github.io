@@ -4,16 +4,15 @@ const intro_triangle = document.getElementById('intro_triangle');
 var isUp = false;
 
 // check if null
-if (triangle_wrapper) {
-  triangle_wrapper.addEventListener('click', function() {
-    if (isUp == false) {
-      slideFromBottom('.intro_screen', -8, 95, 19, 1);
-      isUp = true;
-    } else {
-      slideFromBottom('.intro_screen', 87, 95, 19, -1);
-      isUp = false;
-    }
-  }, false);
+function toggleSlide() {
+  if (isUp == false) {
+    slideFromBottom('.intro_screen', 0, 95, 20, 1);
+    isUp = true;
+  } else {
+    slideFromBottom('.intro_screen', 95, 95, 20, -1);
+    isUp = false;
+  }
+  flipTriangle();
 }
 
 /*
@@ -43,7 +42,6 @@ function slideFromBottom(targetElement, initBottom, distance, steps, direction) 
 // direction of arrow on intro screen
 let pointingDown = false;
 
-triangle_wrapper.addEventListener('click', flipTriangle);
 function flipTriangle() {
   if (pointingDown) {
     intro_triangle.classList.add('pointUp');

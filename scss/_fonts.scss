@@ -6,6 +6,7 @@ $normal: 400;
 $light: 300;
 
 .text {
+  font-size: 1rem;
   &__light {
     font-weight: $light;
   }
@@ -17,22 +18,39 @@ $light: 300;
   }
 }
 
-.title {
+.font-title {
   font-size: 6rem;
-  font-weight: $bold;
 }
 
-.article_title {
+.font-subtitle {
+  font-size: 2rem;
+}
+
+.font-article-title {
   font-weight: $bold;
   font-size: 2rem;
   text-decoration: underline;
   color: $primary;
 }
 
-.subsection_title {
+.font-date {
+  font-style: italic;
+  font-size: 1.2rem;
+  color: $lighter;
+}
+
+.font-subsection-title {
   font-weight: $bold;
   font-size: 3rem;
   color: $primary;
+}
+
+#very {
+  font-size: 1.5rem;
+  font-weight: $bold;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  bottom: 2px;
 }
 
 @mixin article_title {
@@ -49,7 +67,7 @@ $light: 300;
 }
 
 @mixin normal_text {
-  font-size: normal;
+  font-size: 1.8rem;
   font-weight: $normal;
   color: $primary;
 }

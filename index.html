@@ -14,25 +14,54 @@
 
 <body>
   <!-- Intro screen is the black screen at the start -->
-  <div class="intro_screen">
+  <div class="intro_screen d-none d-sm-block">
       <div class="fulltitle">
-        <h1 class="title">Hi, I'm Winston.</h1>
-        <p class="subtitle">Welcome to my site!</p>
+        <h1 class="title font-title">Hi, I'm Winston.</h1>
+        <p class="subtitle font-subtitle"><span id="very">&lt;very/&gt; </span>Amateur Web Developer</p>
       </div>
-    <div id="intro_triangle_wrapper">
-      <div class="triangle_down pointUp" id="intro_triangle"></div>
-    </div>
-    <div class="about_me">
-      <h3 class="subsection_title">About Me</h3>
-    </div>
+    <button class="btn" type="button" onclick="toggleSlide()" id="intro_triangle_wrapper">
+    <div class="triangle_down" id="intro_triangle"></div>
   </div>
-  <div class="container-md">
-    test
+
+  <div class="container-md mt-5">
+    <card class="row gx-0 w-100">
+      <div class="col-md-4 mx-auto text-center" style="max-height: 200px; overflow: hidden">
+        <img src="img/Screenshot 2022-10-28 222412.png" style="width: 100%; max-width: 70vw;">
+      </div>
+      <div class="col-md-8 gx-5 mx-auto border-bottom border-top" style="max-width: 70vw;">
+        <div class="card-body">
+          <h3 class="card-title font-article-title">This Website</h3>
+          <h4 class="card-subtitle font-date">03/03/2022 - Today</h4>
+          <div class="card-text">
+            <p class="text">
+              This is my first time building a website from scratch, though I've learned some HTML and CSS in the past. I am
+              currently learning about Sass, Node, and Bootstrap, hoping to implement them to create an eye-catching,
+              responsive website.
+            </p>
+          </div>
+        </div>
+      </div>
+    </card>
   </div>
-  <div class="row">
-    <div class="col">A</div>
-    <div class="col">B</div>
-    <div class="col">C</div>
+
+  <div class="container-md mt-5">
+    <card class="row gx-0 w-100">
+      <div class="col-md-4 mx-auto text-center" style="max-height: 200px; overflow: hidden">
+        <img src="img/Screenshot 2022-10-28 222412.png" style="width: 100%; max-width: 70vw;">
+      </div>
+      <div class="col-md-8 gx-5 mx-auto border-bottom border-top" style="max-width: 70vw;">
+        <div class="card-body">
+          <a href="rps.html" class="card-title font-article-title">Rock, Paper, Scissors</a>
+          <h4 class="card-subtitle font-date">12/22/2020</h4>
+          <div class="card-text">
+            <p class="text">
+              On December 22, 2020, I created my first web project! It's a simple game of "Rock,
+              Paper, Scissors" with some added features. It's definitely not the prettiest website ever made.
+            </p>
+          </div>
+        </div>
+      </div>
+    </card>
   </div>
   
   <script src="js/main.js"></script>
