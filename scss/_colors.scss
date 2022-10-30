@@ -10,6 +10,19 @@ $background_secondary: rgb(193, 221, 243);
 .color-secondary {
   color: $secondary;
 }
+.color-lighter {
+  color: $lighter;
+}
+
+.fill-primary {
+  fill: $primary;
+}
+.fill-secondary {
+  fill: $secondary;
+}
+.fill-lighter {
+  fill: $lighter;
+}
 
 .back-primary {
   background-color: $background;

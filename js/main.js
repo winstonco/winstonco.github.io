@@ -1,18 +1,22 @@
 const triangle_wrapper = document.getElementById('intro_triangle_wrapper');
 const intro_triangle = document.getElementById('intro_triangle');
+const root = document.documentElement;
 // if the intro screen is up
-var isUp = false;
+var isDown = true;
 
 // check if null
 function toggleSlide() {
-  if (isUp == false) {
+  if (isDown) {
     slideFromBottom('.intro_screen', 0, 95, 20, 1);
-    isUp = true;
+    isDown = false;
+    showScrollbar(true);
+    pointUp(false);
   } else {
     slideFromBottom('.intro_screen', 95, 95, 20, -1);
-    isUp = false;
+    isDown = true;
+    showScrollbar(false);
+    pointUp(true);
   }
-  flipTriangle();
 }
 
 /*
@@ -40,14 +44,18 @@ function slideFromBottom(targetElement, initBottom, distance, steps, direction) 
 }
 
 // direction of arrow on intro screen
-let pointingDown = false;
-
-function flipTriangle() {
-  if (pointingDown) {
-    intro_triangle.classList.add('pointUp');
-    pointingDown = false;
+function pointUp(up) {
+  if (up) {
+    intro_triangle.classList.add('point_up');
   } else {
-    intro_triangle.classList.remove('pointUp')
-    pointingDown = true;
+    intro_triangle.classList.remove('point_up')
+  }
+}
+
+function showScrollbar(show) {
+  if (show) {
+    root.classList.add('show_scroll');
+  } else {
+    root.classList.remove('show_scroll');
   }
 }

@@ -37,7 +37,7 @@
       border-left-width: 2vh;
       border-right-width: 2vh;
     }
-    .pointUp {
+    .point_up {
       transform: rotate(180deg);
     }
     &:hover {
@@ -48,18 +48,44 @@
       }
     }
   }
-  .about_me {
-    background-color: $background;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 8vh;
-    h3 {
-      width: 60%;
-      height: 100%;
-      text-align: center;
-      color: $primary;
-      border-bottom: 2px solid $primary;
+}
+
+.about_me {
+  background-color: $background;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+  .portrait {
+    min-height: 400px;
+    width: 100%;
+    
+    max-width: 800px;
+    overflow: hidden;
+
+    background-image: url(/img/portrait.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100%;
+    background-position: left 30% bottom 130%;
+  }
+
+  @media (min-width: 576px) {
+    .portrait {
+      height: 400px;
+      width: 550px;
+      background-size: 550px;
+      background-position: left 50% bottom 140%;
     }
+  }
+
+  h3 {
+    text-align: center;
+    color: $primary;
+    border-bottom: 2px solid $primary;
+  }
+
+  p {
+    font-size: 1.2rem;
   }
 }
