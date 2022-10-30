@@ -14,13 +14,18 @@ body {
   margin-top: 0;
 
   .project_img_container {
-    max-height: 200px;
+    max-height: 250px;
+    //height: 100%;
     overflow: hidden;
 
     .project_img {
       width: 100%;
       max-width: 70vw;
     }
+  }
+
+  p {
+    margin-top: 1rem;
   }
 }
 

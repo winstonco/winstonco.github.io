@@ -226,12 +226,15 @@ body {
   margin-top: 0;
 }
 .project_item .project_img_container {
-  max-height: 200px;
+  max-height: 250px;
   overflow: hidden;
 }
 .project_item .project_img_container .project_img {
   width: 100%;
   max-width: 70vw;
+}
+.project_item p {
+  margin-top: 1rem;
 }
 
 .wip {
