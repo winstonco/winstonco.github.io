@@ -34,38 +34,38 @@
 .text {
   font-size: 1rem;
 }
-.text__light {
+.text-light {
   font-weight: 300;
 }
-.text__normal {
+.text-normal {
   font-weight: 400;
 }
-.text__bold {
+.text-bold {
   font-weight: 700;
 }
 
-.font_title {
+.font-title {
   font-size: 6rem;
 }
 
-.font_subtitle {
+.font-subtitle {
   font-size: 2rem;
 }
 
-.font_article_title {
+.font-article-title {
   font-weight: 700;
   font-size: 2rem;
   text-decoration: underline;
   color: #181d2a;
 }
 
-.font_date {
+.font-date {
   font-style: italic;
   font-size: 1.2rem;
   color: #50608b;
 }
 
-.font_subsection_title {
+.font-subsection-title {
   font-weight: 700;
   font-size: 3rem;
   color: #181d2a;

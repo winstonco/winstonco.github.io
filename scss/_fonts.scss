@@ -7,39 +7,39 @@ $light: 300;
 
 .text {
   font-size: 1rem;
-  &__light {
+  &-light {
     font-weight: $light;
   }
-  &__normal {
+  &-normal {
     font-weight: $normal;
   }
-  &__bold {
+  &-bold {
     font-weight: $bold;
   }
 }
 
-.font_title {
+.font-title {
   font-size: 6rem;
 }
 
-.font_subtitle {
+.font-subtitle {
   font-size: 2rem;
 }
 
-.font_article_title {
+.font-article-title {
   font-weight: $bold;
   font-size: 2rem;
   text-decoration: underline;
   color: $primary;
 }
 
-.font_date {
+.font-date {
   font-style: italic;
   font-size: 1.2rem;
   color: $lighter;
 }
 
-.font_subsection_title {
+.font-subsection-title {
   font-weight: $bold;
   font-size: 3rem;
   color: $primary;
