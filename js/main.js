@@ -32,7 +32,13 @@ function toggleSlide() {
  * @param {number} steps          The number of steps in the animation.
  * @param {number} direction      1 or -1.
  */
-function slideFromBottom(targetElement, initBottom, distance, steps, direction) {
+function slideFromBottom(
+  targetElement,
+  initBottom,
+  distance,
+  steps,
+  direction
+) {
   let target = document.querySelector(targetElement);
   let id = null;
   let pos = initBottom;
@@ -44,7 +50,7 @@ function slideFromBottom(targetElement, initBottom, distance, steps, direction) 
     if (pos == initBottom + distance * direction) {
       clearInterval(id);
     } else {
-      pos = pos + Math.round(distance/steps) * direction;
+      pos = pos + Math.round(distance / steps) * direction;
       target.style.bottom = pos + 'vh';
     }
   }
@@ -56,15 +62,15 @@ function slideFromBottom(targetElement, initBottom, distance, steps, direction) 
  */
 function pointUp(up) {
   if (up) {
-    intro_triangle.classList.add('point_up')                         ;
+    intro_triangle.classList.add('point_up');
   } else {
-    intro_triangle.classList.remove('point_up')
+    intro_triangle.classList.remove('point_up');
   }
 }
 
 /**
  * Function to show scrollbar or not.
- * 
+ *
  * html.show_scroll {
  *   overflow-y: scroll;
  *   @media (min-width: 576px) {

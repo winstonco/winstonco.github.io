@@ -10,7 +10,7 @@ body {
 @import './intro';
 
 .project_item {
-  margin: .5rem !important;
+  margin: 0.5rem !important;
   margin-top: 0;
 
   .project_img_container {
@@ -38,6 +38,6 @@ body {
   text-align: center;
   :hover {
     fill: lighten($primary, 30%);
-    transition: 100ms ease-in-out
+    transition: 100ms ease-in-out;
   }
 }
