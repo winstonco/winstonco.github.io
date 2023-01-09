@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta
+      charset="utf-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Winston's Site</title>
+    <link rel="stylesheet" href="./css/main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="./assets/favicon.ico" />
+
+    <script defer type="module" src="./main.js"></script>
+    <script
+      defer
+      src="https://code.jquery.com/jquery-3.6.1.min.js"
+      integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Intro -->
+    <div class="intro_screen d-none d-sm-block">
+      <div class="fulltitle">
+        <h1 class="title font-title">Hi, I'm Winston.</h1>
+        <p class="subtitle font-subtitle">
+          <code id="very">&lt;very/&gt;</code> Amateur Web Developer
+        </p>
+      </div>
+      <button class="btn" type="button" id="intro_triangle_wrapper">
+        <div class="triangle_down point_up" id="intro_triangle"></div>
+      </button>
+    </div>
+
+    <!-- About Me -->
+    <div class="about_me container-md p-0 mb-4">
+      <div role="img" aria-label="Picture of me" style="width: 100%">
+        <div class="portrait container-md" alt="Me"></div>
+      </div>
+      <h3 class="font-subsection-title">About Me</h3>
+      <p class="col-lg-8 ms-5 me-5">
+        I'm a junior at the University of Hawai'i at Manoa, majoring in Computer
+        Science. I love working on personal projects, like this one, in my free
+        time. My dream is to become a developer and create products for a
+        living. This is a website that I built from scratch to hold anything I
+        wish to share, so have a look around!
+      </p>
+    </div>
+
+    <!-- Stuff -->
+    <div class="container" style="max-width: 960px">
+      <h3 class="font-subsection-title text-center">Stuff:</h3>
+
+      <!-- Search Helper -->
+      <div class="project_item row">
+        <card class="row gx-0 w-100">
+          <div class="project_img_container col-md-4 mx-auto text-center">
+            <img
+              src="./assets/images/odin-landing-page.png"
+              class="project_img img-fluid"
+            />
+          </div>
+          <div
+            class="col-md-8 gx-5 mx-auto border-bottom border-top"
+            style="max-width: 70vw"
+          >
+            <div class="card-body">
+              <a
+                href="/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-title font-article-title"
+              >
+                Search Helper</a
+              >
+              <h4 class="card-subtitle font-date">11/6/2022 - Today</h4>
+              <div class="card-text">
+                <p class="text">
+                  My first full stack web application. A 'Search Helper' that
+                  retrieves search results from Google and the Stack Exchange
+                  network. Allows for operators like '!-', '--', 't-' to adjust
+                  what results are received. Results are displayed in a sortable
+                  list, and can be favorited by a user. Built using React and
+                  Sass frontend, Node and Express backend, and MongoDB database.
+                </p>
+              </div>
+            </div>
+          </div>
+        </card>
+      </div>
+      <!-- Odin Project -->
+      <div class="project_item row">
+        <card class="row gx-0 w-100">
+          <div class="project_img_container col-md-4 mx-auto text-center">
+            <img
+              src="./assets/images/odin-landing-page.png"
+              class="project_img img-fluid"
+            />
+          </div>
+          <div
+            class="col-md-8 gx-5 mx-auto border-bottom border-top"
+            style="max-width: 70vw"
+          >
+            <div class="card-body">
+              <a
+                href="https://winstonco.org/odin-landing-page"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-title font-article-title"
+              >
+                Odin Project - Landing Page</a
+              >
+              <h4 class="card-subtitle font-date">11/12/2022 - 11/13/2022</h4>
+              <div class="card-text">
+                <p class="text">
+                  A recreation of the Odin Project Landing Page using pure HTML
+                  and CSS.
+                </p>
+                <a
+                  style="text-decoration: none"
+                  href="https://www.theodinproject.com/lessons/foundations-landing-page"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >https://www.theodinproject.com/lessons/foundations-landing-page</a
+                >
+              </div>
+            </div>
+          </div>
+        </card>
+      </div>
+      <!-- Alerts Border Widget-->
+      <div class="project_item row">
+        <card class="row gx-0 w-100">
+          <div class="project_img_container col-md-4 mx-auto text-center">
+            <img
+              src="./assets/images/background2.png"
+              class="project_img img-fluid"
+            />
+          </div>
+          <div
+            class="col-md-8 gx-5 mx-auto border-bottom border-top"
+            style="max-width: 70vw"
+          >
+            <div class="card-body">
+              <a
+                href="https://alerts-border-widget.onrender.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-title font-article-title"
+              >
+                Alerts-Border Widget</a
+              >
+              <h4 class="card-subtitle font-date">10/15/2022 - 10/27/2022</h4>
+              <div class="card-text">
+                <p class="text">
+                  A web-based widget to be used in OBS, displaying stream alerts
+                  from Twitch such as follow notifications integrated with an
+                  animated webcam background. Subscribes to Twitch's eventhub
+                  webhooks to listen to events. Sends a custom message to the
+                  client through a Websocket.
+                </p>
+              </div>
+            </div>
+          </div>
+        </card>
+      </div>
+      <!-- My Site -->
+      <div class="project_item row">
+        <card class="row gx-0 w-100">
+          <div class="project_img_container col-md-4 mx-auto text-center">
+            <img src="./assets/images/this-site.png" class="project_img" />
+          </div>
+          <div
+            class="col-md-8 gx-5 mx-auto border-bottom border-top"
+            style="max-width: 70vw"
+          >
+            <div class="card-body">
+              <a href="#" class="card-title font-article-title">
+                This Website</a
+              >
+              <h4 class="card-subtitle font-date">03/03/2022 - Today</h4>
+              <div class="card-text">
+                <p class="text">
+                  This is my first time building a website from scratch, though
+                  I've learned some HTML and CSS in the past. I am currently
+                  learning about Sass and Bootstrap, hoping to implement them to
+                  create an eye-catching, responsive website.
+                </p>
+              </div>
+            </div>
+          </div>
+        </card>
+      </div>
+      <!-- RPS -->
+      <div class="project_item row">
+        <card class="row gx-0 w-100">
+          <div class="project_img_container col-md-4 mx-auto text-center">
+            <img src="./assets/images/rps.png" class="project_img" />
+          </div>
+          <div
+            class="col-md-8 gx-5 mx-auto border-bottom border-top"
+            style="max-width: 70vw"
+          >
+            <div class="card-body">
+              <a
+                href="rps.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="card-title font-article-title"
+              >
+                Rock, Paper, Scissors</a
+              >
+              <h4 class="card-subtitle font-date">12/22/2020</h4>
+              <div class="card-text">
+                <p class="text">
+                  On December 22, 2020, I created my first web project! It's a
+                  simple game of "Rock, Paper, Scissors" with some added
+                  features.
+                </p>
+              </div>
+            </div>
+          </div>
+        </card>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <container>
+      <footer>
+        <div class="wip">
+          <p class="py-2 m-0 text-center" style="font-size: 1.3rem">
+            You've reached the end,<br />
+            but don't worry. The website<br />
+            is still in progress!<br />
+            🛠️
+          </p>
+          <ul class="nav justify-content-end align-items-center">
+            <li class="nav-item col-1">
+              <a
+                class="nav-link"
+                href="https://github.com/winstonco"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  class="bi bi-github"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="nav-item col-1">
+              <a
+                class="nav-link"
+                href="https://www.linkedin.com/in/winston-co/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  class="bi bi-linkedin"
+                  viewBox="0 0 16 16"
+                >
+                  <path
+                    d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                  />
+                </svg>
+              </a>
+            </li>
+            <li class="nav-item col-5">
+              <p class="my-0 me-2 color_lighter text-end">© 2023</p>
+            </li>
+          </ul>
+        </div>
+      </footer>
+    </container>
+
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="index.js"></script>
+  </body>
+</html>

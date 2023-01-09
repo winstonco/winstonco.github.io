@@ -1,28 +1,15 @@
-# winstonco.github.io (v2.0)
+# 🚀 Welcome to your new awesome project!
 
-### 10/29/22
+This project has been created using **webpack-cli**, you can now run
 
-- Entire thing now using Bootstrap 5
-- Cleaned up Sass
-- Documented Js functions
+```
+npm run build
+```
 
-#### Utility classes:
+or
 
-> Fonts:
->  - text-light
->  - text-normal
->  - text-bold
->  - font-title
->  - font-subtitle
->  - font-article-title
->  - font-date
->  - font-subsection-title
->
-> Colors:
->  - color-primary
->  - color-secondary
->  - color-lighter
->  - fill-primary
->  - fill-lighter
->  - back-primary
->  - back-secondary
+```
+yarn build
+```
+
+to bundle your application
