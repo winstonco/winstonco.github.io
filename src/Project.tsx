@@ -7,8 +7,20 @@ const Project = (props: {
   link: string;
   date: { start: string; end?: string };
   body: string;
+  stack: string;
+  foot?: string;
 }) => {
-  const { img, title, link, date, body } = props;
+  const { img, title, link, date, body, stack, foot } = props;
+
+  const footer = () => {
+    if (foot) {
+      return (
+        <Card.Text>
+          <p className="text">{foot}</p>
+        </Card.Text>
+      );
+    }
+  };
 
   return (
     <Card className="project_item">
@@ -32,6 +44,10 @@ const Project = (props: {
         <Card.Text>
           <p className="text">{body}</p>
         </Card.Text>
+        <Card.Text>
+          <p className="text">{stack}</p>
+        </Card.Text>
+        {footer()}
       </div>
     </Card>
   );

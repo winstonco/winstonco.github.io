@@ -13,6 +13,11 @@ const Home = () => {
           for a living. This is a website that I built from scratch to hold
           anything I wish to share, so have a look around!
         </p>
+        <p className="col-lg-8 ms-5 me-5">
+          I am currently learning React and TypeScript. <br /> Things I'm
+          looking forward to learning in the future: Next.js, SQL, Pocketbase,
+          Remix, Svelte.
+        </p>
       </div>
     </div>
   );
