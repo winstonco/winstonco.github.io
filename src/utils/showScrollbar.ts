@@ -1,5 +1,3 @@
-const root = document.documentElement;
-
 /**
  * Function to show scrollbar or not.
  *
@@ -17,12 +15,12 @@ const root = document.documentElement;
  *     }
  *   }
  * }
- * @param {boolean} show True if showing scrollbar. False if not.
+ * @param show True if showing scrollbar. False if not.
  */
-export default function showScrollbar(show) {
+export default function showScrollbar(show: boolean) {
   if (show) {
-    root.classList.add('show_scroll');
+    document.getElementById('root')?.classList.add('show_scroll');
   } else {
-    root.classList.remove('show_scroll');
+    document.getElementById('root')?.classList.remove('show_scroll');
   }
 }

@@ -1,20 +1,20 @@
 // Main website font: Open Sans
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 
-$bold: 700;
-$normal: 400;
-$light: 300;
+$font-bold: 700;
+$font-normal: 400;
+$font-light: 300;
 
 .text {
   font-size: 1rem;
   &-light {
-    font-weight: $light;
+    font-weight: $font-light;
   }
   &-normal {
-    font-weight: $normal;
+    font-weight: $font-normal;
   }
   &-bold {
-    font-weight: $bold;
+    font-weight: $font-bold;
   }
 }
 
@@ -27,7 +27,7 @@ $light: 300;
 }
 
 .font-article-title {
-  font-weight: $bold;
+  font-weight: $font-bold;
   font-size: 2rem;
   text-decoration: underline;
   color: $primary;
@@ -40,34 +40,34 @@ $light: 300;
 }
 
 .font-subsection-title {
-  font-weight: $bold;
+  font-weight: $font-bold;
   font-size: 3rem;
   color: $primary;
 }
 
-#very {
+.code {
   font-size: 1.5rem;
-  font-weight: $bold;
+  font-weight: $font-bold;
   font-family: 'Courier New', Courier, monospace;
   position: relative;
   bottom: 2px;
 }
 
 @mixin article_title {
-  font-weight: $bold;
+  font-weight: $font-bold;
   font-size: 1.1rem;
   text-decoration: underline;
   color: $primary;
 }
 
 @mixin subsection_title {
-  font-weight: $bold;
+  font-weight: $font-bold;
   font-size: 3rem;
   color: $primary;
 }
 
 @mixin normal_text {
+  font-weight: $font-normal;
   font-size: 1.8rem;
-  font-weight: $normal;
   color: $primary;
 }

@@ -11,17 +11,20 @@ const stylesHandler = isProduction
   : 'style-loader';
 
 const config = {
-  entry: './src/index.jsx',
+  entry: './src/index.tsx',
+  devtool: 'inline-source-map',
   output: {
     path: path.resolve(__dirname, 'dist'),
   },
   devServer: {
     open: true,
     host: 'localhost',
+    historyApiFallback: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: 'index.html',
+      favicon: 'src/assets/favicon.ico',
     }),
 
     // Add your plugins here
@@ -43,6 +46,11 @@ const config = {
         },
       },
       {
+        test: /\.tsx?$/,
+        use: 'ts-loader',
+        exclude: /node_modules/,
+      },
+      {
         test: /\.s[ac]ss$/i,
         use: [
           // Creates `style` nodes from JS strings
@@ -55,7 +63,7 @@ const config = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-        type: 'asset',
+        type: 'asset/resource',
       },
 
       // Add your rules for custom modules here
@@ -63,7 +71,7 @@ const config = {
     ],
   },
   resolve: {
-    extensions: ['.js', '.jsx'],
+    extensions: ['.tsx', '.ts', '.js', '.jsx'],
   },
 };
 
