@@ -1,0 +1,52 @@
+#intro-all {
+  height: 100% !important;
+}
+
+.intro_screen {
+  font-size: $font-normal;
+  margin: 0px;
+  background-color: $primary;
+  color: $background;
+  width: 100%;
+  height: 100vh;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  .fulltitle {
+    padding-left: 5%;
+    .title {
+      line-height: 120%;
+      padding-left: 2rem;
+    }
+    .subtitle {
+      padding-left: 4rem;
+    }
+  }
+
+  #intro_triangle_wrapper {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    .triangle_down {
+      background-color: $primary;
+      border-top-color: $background;
+      border-top-width: 3vh;
+      border-left-width: 2vh;
+      border-right-width: 2vh;
+    }
+    .point_up {
+      transform: rotate(180deg);
+    }
+    &:hover {
+      #intro_triangle {
+        animation: blinker 1.5s infinite;
+      }
+    }
+  }
+}
