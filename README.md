@@ -15,3 +15,6 @@ yarn build
 ```
 
 to bundle your application
+
+### Deploy instructions from:
+https://www.learnhowtoprogram.com/intermediate-javascript/team-week/hosting-a-webpack-project-with-gh-pages
