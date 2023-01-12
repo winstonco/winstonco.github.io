@@ -17,6 +17,45 @@ const Intro = () => {
     style = { transform: 'rotate(0)' };
   }
 
+  let initialTouchY: number;
+  let movePos: number;
+
+  const handleTouchStart = (ev: React.TouchEvent<HTMLDivElement>) => {
+    if (ev.touches.length === 1) {
+      const touch = ev.touches.item(0);
+      initialTouchY = touch.clientY;
+    }
+  };
+
+  const handleTouchMove = (ev: React.TouchEvent<HTMLDivElement>) => {
+    if (ev.touches.length === 1) {
+      const touch = ev.touches.item(0);
+      const all = document.getElementById('intro-all');
+      if (all && touch) {
+        movePos = touch.clientY - initialTouchY;
+        if (movePos < 0) all.style.top = movePos + 'px';
+      }
+    }
+  };
+
+  const handleTouchEnd = (ev: React.TouchEvent<HTMLDivElement>) => {
+    const all = document.getElementById('intro-all');
+    if (all) {
+      if (movePos < -100) {
+        hideIntro();
+      } else {
+        all.style.top = '0px';
+      }
+    }
+  };
+
+  const handleTouchCancel = (ev: React.TouchEvent<HTMLDivElement>) => {
+    const all = document.getElementById('intro-all');
+    if (all) {
+      all.style.top = '0px';
+    }
+  };
+
   return (
     <Offcanvas show={isDown} placement="top" id="intro-all">
       <div
@@ -24,6 +63,10 @@ const Intro = () => {
         onWheel={(ev) => {
           if (ev.deltaY > 0) hideIntro();
         }}
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+        onTouchCancel={handleTouchCancel}
       >
         <div className="fulltitle">
           <code className="code">&lt;h1 class="title"&gt;</code>
