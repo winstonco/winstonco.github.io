@@ -8,7 +8,6 @@ import App from './App';
 import ErrorPage from './ErrorPage';
 import Home from './routes/Home';
 import Projects from './routes/Projects';
-import Intro from './Intro';
 import Resume from './routes/Resume';
 import ContactMe from './routes/ContactMe';
 
@@ -40,7 +39,6 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <Intro />
     <RouterProvider router={router} />
   </React.StrictMode>
 );

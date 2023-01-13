@@ -11,23 +11,7 @@
 
 @import './fonts', './resets', './other', './mixins';
 
-.App {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
-  background-color: $background !important;
-  color: $primary;
-  height: 100vh;
-  overflow: hidden;
-  padding: 1rem;
-
-  $header-height: $nav-link-height + 2 * $nav-link-padding-y;
-
-  margin-top: $header-height;
-  height: calc(100vh - $header-height);
-
-  overflow: scroll;
-  scroll-behavior: smooth !important;
-
+body {
   @media screen and (max-width: 576px) {
     &::-webkit-scrollbar {
       width: 0px;
@@ -38,11 +22,40 @@
       width: 4px;
     }
     &::-webkit-scrollbar-track {
-      background: $background;
+      background: $primary;
     }
     &::-webkit-scrollbar-thumb {
-      background: $secondary;
+      background: $background-secondary;
     }
+  }
+}
+
+.App {
+  height: 100vh;
+  background-color: $background;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: $primary;
+  background-color: $background;
+
+  $header-height: $nav-link-height + 2 * $nav-link-padding-y;
+  padding-top: $header-height + 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+
+  #pull-intro {
+    top: 0px;
+    width: 30px;
+    height: 80px;
+    right: 10px;
+    position: fixed;
+    background-color: $primary;
+    border-radius: 15px;
   }
 }
 

@@ -3,9 +3,16 @@ import { Nav, Navbar } from 'react-bootstrap';
 const Footer = () => {
   return (
     <footer>
-      <Navbar className="back-secondary" fixed="bottom">
+      <Navbar className="back-secondary py-0">
         <Nav as="ul" className="justify-content-center align-items-center">
-          <Nav.Item as="li" className="col-1">
+          {/* Invisible element used to balance the marginLeft: auto copyright element on the other side */}
+          <Nav.Item
+            as="li"
+            style={{ marginRight: 'auto', visibility: 'hidden' }}
+          >
+            <p className="my-0 me-2 color_lighter text-end">© 2023</p>
+          </Nav.Item>
+          <Nav.Item as="li">
             <Nav.Link
               className="nav-link"
               href="https://twitch.tv/frostfireftw"
@@ -24,7 +31,7 @@ const Footer = () => {
               </svg>
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item as="li" className="col-1">
+          <Nav.Item as="li">
             <Nav.Link
               className="nav-link"
               href="https://github.com/winstonco"
@@ -42,7 +49,7 @@ const Footer = () => {
               </svg>
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item as="li" className="col-1">
+          <Nav.Item as="li">
             <Nav.Link
               className="nav-link"
               href="https://www.linkedin.com/in/winston-co/"
@@ -60,7 +67,7 @@ const Footer = () => {
               </svg>
             </Nav.Link>
           </Nav.Item>
-          <Nav.Item as="li" className="col-1">
+          <Nav.Item as="li" style={{ marginLeft: 'auto' }}>
             <p className="my-0 me-2 color_lighter text-end">© 2023</p>
           </Nav.Item>
         </Nav>

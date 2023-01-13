@@ -1,5 +1,4 @@
 import { Card } from 'react-bootstrap';
-// import * as image from './assets/images/this-site.png';
 
 const Project = (props: {
   img: string;
@@ -12,13 +11,13 @@ const Project = (props: {
 }) => {
   const { img, title, link, date, body, stack, foot } = props;
 
+  const datePart = () => {
+    return `${date.start} - ${date.end ?? 'Today'}`;
+  };
+
   const footer = () => {
     if (foot) {
-      return (
-        <Card.Text>
-          <p className="text">{foot}</p>
-        </Card.Text>
-      );
+      return <Card.Text className="text">{foot}</Card.Text>;
     }
   };
 
@@ -38,15 +37,9 @@ const Project = (props: {
         >
           {title}
         </Card.Title>
-        <Card.Subtitle className="font-date">
-          {date.start} - {date.end ?? 'Today'}
-        </Card.Subtitle>
-        <Card.Text>
-          <p className="text">{body}</p>
-        </Card.Text>
-        <Card.Text>
-          <p className="text">{stack}</p>
-        </Card.Text>
+        <Card.Subtitle className="font-date">{datePart()}</Card.Subtitle>
+        <Card.Text className="text">{body}</Card.Text>
+        <Card.Text className="text">{stack}</Card.Text>
         {footer()}
       </div>
     </Card>
