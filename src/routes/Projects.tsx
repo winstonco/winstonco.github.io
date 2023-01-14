@@ -49,7 +49,7 @@ const Projects = () => {
         img={abw}
         title="Alerts-Border Widget"
         link="https://alerts-border-widget.onrender.com"
-        date={{ start: '10/15/2022', end: '10/27/2022' }}
+        date={{ start: '10/15/2022', end: '1/13/2022' }}
         body="A web-based widget to be used in OBS, displaying stream alerts
               from Twitch such as follow notifications integrated with an
               animated webcam background. Subscribes to Twitch's eventsub
