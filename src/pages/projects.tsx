@@ -1,6 +1,7 @@
 import { Container } from 'react-bootstrap';
 
-import Project from '../Project';
+import Project from '../components/Project';
+import nothingStore from '../assets/images/nothing-store.png';
 import shamIll from '../assets/images/sham-illustrator.png';
 import searchHelper from '../assets/images/search-helper.png';
 import odin from '../assets/images/odin-landing-page.png';
@@ -11,9 +12,21 @@ const Projects = () => {
   return (
     <Container className="projects">
       <Project
+        img={nothingStore}
+        title="Nothing Store"
+        link="https://nothing-store.vercel.app/"
+        date={{ start: '1/14/2023' }}
+        body="A VERY legitimate online store using Stripe where users can
+        pay money to me in exchange for an image of an empty paper bag. Okay, but
+        actually, I just wanted to try setting up a store with Stripe while learning
+        a new tech stack. As a bonus, maybe someone will be duped into giving me money!"
+        stack="TypeScript, Next.js, Tailwind CSS, Pocketbase (maybe)"
+        foot="In progress! 🛠️"
+      />
+      <Project
         img={shamIll}
         title="Sham Illustrator"
-        link="https://sham-illustrator-production.up.railway.app/"
+        link="https://sham-illustrator.onrender.com/"
         date={{ start: '12/24/2022' }}
         body="A bit of a shorter project than the last, mainly to learn Typescript.
         It is a party game where everone but one person is given the same prompt.
@@ -33,7 +46,6 @@ const Projects = () => {
               list, and can be favorited by a user and stored on a MongoDB
               database."
         stack="React, Sass, MongoDB, Node, Express, Lerna"
-        foot="*Currently not deployed*"
       />
       <Project
         img={odin}
@@ -49,14 +61,13 @@ const Projects = () => {
         img={abw}
         title="Alerts-Border Widget"
         link="https://alerts-border-widget.onrender.com"
-        date={{ start: '10/15/2022', end: '1/13/2022' }}
+        date={{ start: '10/15/2022', end: '1/13/2023' }}
         body="A web-based widget to be used in OBS, displaying stream alerts
               from Twitch such as follow notifications integrated with an
               animated webcam background. Subscribes to Twitch's eventsub
               webhooks to listen to events. Sends a custom message to the
               client through a Websocket."
         stack="Raw HTML, CSS, Socket.io, Node, Express"
-        foot="*Currently not deployed*"
       />
       <Project
         img={thisSite}

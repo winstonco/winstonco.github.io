@@ -1,4 +1,4 @@
-import WIP from '../WIP';
+import WIP from '../components/WIP';
 
 const Resume = () => {
   return <WIP />;

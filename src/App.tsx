@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { Outlet } from 'react-router-dom';
 
-import Header from './Header';
-import Footer from './Footer';
-import Intro from './Intro';
-import PullIntro from './PullIntro';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Intro from './components/Intro';
+import PullIntro from './components/PullIntro';
 
 const App = () => {
   const [introIsDown, setIntroIsDown] = useState(true);
