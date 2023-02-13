@@ -2,7 +2,7 @@ import { Container } from 'react-bootstrap';
 
 import Project from '../components/Project';
 import nothingStore from '../assets/images/nothing-store.png';
-import shamIll from '../assets/images/sham-illustrator.png';
+import illustraitor from '../assets/images/illustraitor.png';
 import searchHelper from '../assets/images/search-helper.png';
 import odin from '../assets/images/odin-landing-page.png';
 import abw from '../assets/images/background2.png';
@@ -24,9 +24,9 @@ const Projects = () => {
         foot="In progress! 🛠️"
       />
       <Project
-        img={shamIll}
-        title="Sham Illustrator"
-        link="https://sham-illustrator.onrender.com/"
+        img={illustraitor}
+        title="Illustraitor"
+        link="https://illustraitor.onrender.com/"
         date={{ start: '12/24/2022' }}
         body="A bit of a shorter project than the last, mainly to learn Typescript.
         It is a party game where everone but one person is given the same prompt.
