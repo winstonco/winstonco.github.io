@@ -81,7 +81,7 @@ const Intro = (props: {
       <div
         className="intro_screen" // d-none d-sm-flex"
         onWheel={(ev) => {
-          if (ev.deltaY > 0) hideIntro();
+          if (ev.deltaY < 0) hideIntro();
         }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}

@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 
-const PullIntro = (props: {
+import pullString from '../assets/images/pull-string.svg';
+
+const PullIntro = ({
+  isDown,
+  setIsDown,
+}: {
   isDown: boolean;
   setIsDown: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const { isDown, setIsDown } = props;
-
   const [dragging, setDragging] = useState<boolean>(false);
   const [initialTouchY, setInitialTouchY] = useState<number>(0);
   let movePos: number;
+  const maxMoveY = 25;
 
   const handleTouchEnd = (
     ev: React.MouseEvent<HTMLDivElement> | MouseEvent
@@ -17,7 +21,8 @@ const PullIntro = (props: {
     const pull = document.getElementById('pull-intro');
     if (pull) {
       if (
-        parseInt(pull.style.top.slice(0, pull.style.top.indexOf('p')), 10) >= 18
+        parseInt(pull.style.top.slice(0, pull.style.top.indexOf('p')), 10) >=
+        maxMoveY - 2
       ) {
         setIsDown(true);
       }
@@ -44,25 +49,21 @@ const PullIntro = (props: {
     const pull = document.getElementById('pull-intro');
     if (pull && dragging) {
       movePos = ev.clientY - initialTouchY;
-      if (movePos <= 20) {
+      if (movePos <= maxMoveY) {
         pull.style.top = movePos + 'px';
       }
     }
   };
   // TODO
   return (
-    <>
-      <div
-        id="pull-intro"
-        onClick={() => {
-          // setIsDown(true);
-        }}
-        onMouseDown={handleDragStart}
-        onMouseMove={handleDrag}
-        onMouseUp={handleTouchEnd}
-        // onMouseLeave={handleTouchEnd}
-      ></div>
-    </>
+    <div
+      onMouseDown={handleDragStart}
+      onMouseMove={handleDrag}
+      onMouseUp={handleTouchEnd}
+    >
+      <img id="pull-intro" src={pullString} alt="pull string" />
+      <span id="pull-intro-label">Pull Me!</span>
+    </div>
   );
 };
 

@@ -47,16 +47,6 @@ body {
   padding-top: $header-height + 1rem;
   padding-bottom: 1rem;
   position: relative;
-
-  #pull-intro {
-    top: 0px;
-    width: 30px;
-    height: 80px;
-    right: 10px;
-    position: fixed;
-    background-color: $primary;
-    border-radius: 15px;
-  }
 }
 
 @import './intro';
