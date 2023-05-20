@@ -1,0 +1,37 @@
+body {
+  @media screen and (max-width: 576px) {
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+  @media screen and (min-width: 576px) {
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $primary;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $background-secondary;
+    }
+  }
+}
+
+.App {
+  height: 100vh;
+  background-color: $background;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: normal;
+  color: $primary;
+  background-color: $background;
+
+  $header-height: $nav-link-height + 2 * $nav-link-padding-y;
+  padding-top: $header-height + 1rem;
+  padding-bottom: 1rem;
+  position: relative;
+}

@@ -6,8 +6,10 @@ import Footer from './components/Footer';
 import Intro from './components/Intro';
 import PullIntro from './components/PullIntro';
 
-const App = () => {
-  const [introIsDown, setIntroIsDown] = useState(true);
+const App: React.FC = () => {
+  const [introIsDown, setIntroIsDown] = useState(
+    sessionStorage.getItem('introIsDown') === null
+  );
 
   return (
     <>

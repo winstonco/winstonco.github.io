@@ -1,12 +1,12 @@
 import { Container } from 'react-bootstrap';
 
 import Project from '../components/Project';
-import nothingStore from '../assets/images/nothing-store.png';
-import illustraitor from '../assets/images/illustraitor.png';
-import searchHelper from '../assets/images/search-helper.png';
-import odin from '../assets/images/odin-landing-page.png';
-import abw from '../assets/images/background2.png';
-import thisSite from '../assets/images/this-site.png';
+import nothingStore from '../assets/images/projects/nothing-store.png';
+import illustraitor from '../assets/images/projects/illustraitor.png';
+import searchHelper from '../assets/images/projects/search-helper.png';
+import odin from '../assets/images/projects/odin-landing-page.png';
+import abw from '../assets/images/projects/background2.png';
+import thisSite from '../assets/images/projects/this-site.png';
 
 const Projects = () => {
   return (
@@ -20,7 +20,7 @@ const Projects = () => {
         pay money to me in exchange for an image of an empty paper bag. Okay, but
         actually, I just wanted to try setting up a store with Stripe while learning
         a new tech stack. As a bonus, maybe someone will be duped into giving me money!"
-        stack="TypeScript, Next.js, Tailwind CSS, Pocketbase (maybe)"
+        tags={['TypeScript', 'Next.js', 'Tailwind CSS', 'Pocketbase (maybe)']}
         foot="In progress! 🛠️"
       />
       <Project
@@ -32,7 +32,7 @@ const Projects = () => {
         It is a party game where everone but one person is given the same prompt.
         Each player takes turns adding to the same drawing for a short time, and at
         the end of the game, players must guess who they think the fake is."
-        stack="TypeScript, Socket.io, React + MUI, Express"
+        tags={['TypeScript', 'Socket.io', 'React', 'MUI', 'Express']}
       />
       <Project
         img={searchHelper}
@@ -45,7 +45,7 @@ const Projects = () => {
               what results are received. Results are displayed in a sortable
               list, and can be favorited by a user and stored on a MongoDB
               database."
-        stack="React, Sass, MongoDB, Node, Express, Lerna"
+        tags={['React', 'Sass', 'MongoDB', 'Node', 'Express', 'Lerna']}
       />
       <Project
         img={odin}
@@ -55,7 +55,7 @@ const Projects = () => {
         body="A project made while doing the Odin Project Foundations course.
               It is a recreation of the Odin Project Landing Page using pure HTML
               and CSS to strengthen my familiarity with basic frontend tools."
-        stack="Raw HTML, CSS"
+        tags={['HTML', 'CSS']}
       />
       <Project
         img={abw}
@@ -67,7 +67,7 @@ const Projects = () => {
               animated webcam background. Subscribes to Twitch's eventsub
               webhooks to listen to events. Sends a custom message to the
               client through a Websocket."
-        stack="Raw HTML, CSS, Socket.io, Node, Express"
+        tags={['HTML', 'CSS', 'Socket.io', 'Node', 'Express']}
       />
       <Project
         img={thisSite}
@@ -77,7 +77,7 @@ const Projects = () => {
         body="This is version 3 of my portfolio website. I wanted to rebuild it
         using React and split it into more pages instead of all being in one.
         I'm using Webpack to build it before deploying to GitHub pages."
-        stack="React-Bootstrap, TypeScript, Sass, Webpack"
+        tags={['React-Bootstrap', 'TypeScript', 'Sass', 'Webpack']}
       />
     </Container>
   );

@@ -1,16 +1,14 @@
-import { Card } from 'react-bootstrap';
+import { Badge, Card } from 'react-bootstrap';
 
-const Project = (props: {
+const Project: React.FC<{
   img: string;
   title: string;
   link: string;
   date: { start: string; end?: string };
   body: string;
-  stack: string;
+  tags: string[];
   foot?: string;
-}) => {
-  const { img, title, link, date, body, stack, foot } = props;
-
+}> = ({ img, title, link, date, body, tags, foot }) => {
   const datePart = () => {
     return `${date.start} - ${date.end ?? 'Today'}`;
   };
@@ -22,9 +20,9 @@ const Project = (props: {
   };
 
   return (
-    <Card className="project_item">
+    <Card className="project-item">
       <div className="col-sm-4 mx-auto">
-        <Card.Img src={img} className="project_img img-fluid" />
+        <Card.Img src={img} className="project-img img-fluid" />
       </div>
 
       <div className="card-body">
@@ -39,7 +37,11 @@ const Project = (props: {
         </Card.Title>
         <Card.Subtitle className="font-date">{datePart()}</Card.Subtitle>
         <Card.Text className="text">{body}</Card.Text>
-        <Card.Text className="text">{stack}</Card.Text>
+        {tags.map((tag) => (
+          <Badge pill bg="secondary" key={tag} className="me-1">
+            {tag}
+          </Badge>
+        ))}
         {footer()}
       </div>
     </Card>

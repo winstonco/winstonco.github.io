@@ -1,6 +1,7 @@
+import React from 'react';
 import { Nav, Navbar } from 'react-bootstrap';
 
-const Footer = () => {
+const Footer: React.FC = () => {
   return (
     <footer>
       <Navbar className="back-secondary py-0">

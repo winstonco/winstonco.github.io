@@ -6,10 +6,10 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './scss/app.scss';
 import App from './App';
 import ErrorPage from './components/ErrorPage';
-import Home from './pages';
-import Projects from './pages/projects';
-import Resume from './pages/resume';
-import ContactMe from './pages/contact-me';
+import Home from './pages/Home';
+import Projects from './pages/Projects';
+import Resume from './pages/Resume';
+import ContactMe from './pages/ContactMe';
 
 const router = createBrowserRouter([
   {

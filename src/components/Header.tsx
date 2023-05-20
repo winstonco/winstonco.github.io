@@ -1,7 +1,7 @@
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { LinkContainer } from 'react-router-bootstrap';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header>
       <Navbar

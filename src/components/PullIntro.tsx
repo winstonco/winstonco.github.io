@@ -13,6 +13,7 @@ const PullIntro = ({
   const [initialTouchY, setInitialTouchY] = useState<number>(0);
   let movePos: number;
   const maxMoveY = 25;
+  const wiggleRoomY = 4;
 
   const handleTouchEnd = (
     ev: React.MouseEvent<HTMLDivElement> | MouseEvent
@@ -22,9 +23,10 @@ const PullIntro = ({
     if (pull) {
       if (
         parseInt(pull.style.top.slice(0, pull.style.top.indexOf('p')), 10) >=
-        maxMoveY - 2
+        maxMoveY - wiggleRoomY
       ) {
         setIsDown(true);
+        sessionStorage.removeItem('introIsDown');
       }
       pull.style.top = '0px';
     }
@@ -54,7 +56,7 @@ const PullIntro = ({
       }
     }
   };
-  // TODO
+
   return (
     <div
       onMouseDown={handleDragStart}

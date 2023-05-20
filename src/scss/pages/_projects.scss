@@ -4,15 +4,15 @@
   align-items: center;
   gap: 2rem;
 
-  .project_item {
-    @media (min-width: 768px) {
+  .project-item {
+    @media (min-width: 992px) {
       flex-direction: row !important;
     }
 
-    .project_img {
+    .project-img {
       flex-direction: row !important;
       object-fit: cover;
-      height: 100%;
+      flex: 1;
     }
 
     p {

@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { Offcanvas } from 'react-bootstrap';
 
-const Intro = (props: {
+const Intro: React.FC<{
   isDown: boolean;
   setIsDown: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
-  const { isDown, setIsDown } = props;
-
+}> = ({ isDown, setIsDown }) => {
   const hideIntro = () => {
     setIsDown(false);
+    sessionStorage.setItem('introIsDown', 'false');
   };
-  // useScrollEvent(window.scrollY, [0, toggleSlide], [0, toggleSlide]);
 
   // Set triangle direction
   let style: React.CSSProperties = {};
@@ -81,7 +79,8 @@ const Intro = (props: {
       <div
         className="intro_screen" // d-none d-sm-flex"
         onWheel={(ev) => {
-          if (ev.deltaY < 0) hideIntro();
+          // if (ev.deltaY < 0)
+          hideIntro();
         }}
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
