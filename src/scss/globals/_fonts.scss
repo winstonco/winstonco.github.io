@@ -5,6 +5,25 @@ $font-bold: 700;
 $font-normal: 400;
 $font-light: 300;
 
+@mixin article_title {
+  font-weight: $font-bold;
+  font-size: 2rem;
+  text-decoration: none;
+  color: $primary;
+}
+
+@mixin subsection_title {
+  font-weight: $font-normal;
+  font-size: 2rem;
+  color: $primary;
+}
+
+@mixin normal_text {
+  font-weight: $font-normal;
+  font-size: 1.8rem;
+  color: $primary;
+}
+
 .text {
   font-size: 1rem;
   &-light {
@@ -27,10 +46,7 @@ $font-light: 300;
 }
 
 .font-article-title {
-  font-weight: $font-bold;
-  font-size: 2rem;
-  text-decoration: underline;
-  color: $primary;
+  @include article_title;
 }
 
 .font-date {
@@ -40,9 +56,7 @@ $font-light: 300;
 }
 
 .font-subsection-title {
-  font-weight: $font-bold;
-  font-size: 3rem;
-  color: $primary;
+  @include subsection_title;
 }
 
 .code {
@@ -51,23 +65,4 @@ $font-light: 300;
   font-family: 'Courier New', Courier, monospace;
   position: relative;
   bottom: 2px;
-}
-
-@mixin article_title {
-  font-weight: $font-bold;
-  font-size: 1.1rem;
-  text-decoration: underline;
-  color: $primary;
-}
-
-@mixin subsection_title {
-  font-weight: $font-bold;
-  font-size: 3rem;
-  color: $primary;
-}
-
-@mixin normal_text {
-  font-weight: $font-normal;
-  font-size: 1.8rem;
-  color: $primary;
 }
