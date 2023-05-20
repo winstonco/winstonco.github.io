@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import pullString from '../assets/images/pull-string.svg';
+import pullString from '../assets/svg/pull-string.svg';
 
 const PullIntro = ({
   isDown,
