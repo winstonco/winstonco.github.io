@@ -9,7 +9,6 @@ import ErrorPage from './components/ErrorPage';
 import Home from './pages/Home';
 import Projects from './pages/Projects';
 import Resume from './pages/Resume';
-import ContactMe from './pages/ContactMe';
 
 const router = createBrowserRouter([
   {
@@ -25,14 +24,10 @@ const router = createBrowserRouter([
         path: 'projects',
         element: <Projects />,
       },
-      {
-        path: 'resume',
-        element: <Resume />,
-      },
-      {
-        path: 'contact-me',
-        element: <ContactMe />,
-      },
+      // {
+      //   path: 'resume',
+      //   element: <Resume />,
+      // },
     ],
   },
 ]);

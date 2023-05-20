@@ -24,12 +24,9 @@ const Header: React.FC = () => {
               <LinkContainer to={'/projects'}>
                 <Nav.Link>Projects</Nav.Link>
               </LinkContainer>
-              <LinkContainer to={'/resume'}>
+              {/* <LinkContainer to={'/resume'}>
                 <Nav.Link>Resume</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to={'/contact-me'}>
-                <Nav.Link>Contact Me</Nav.Link>
-              </LinkContainer>
+              </LinkContainer> */}
             </Nav>
           </Navbar.Collapse>
         </Container>
