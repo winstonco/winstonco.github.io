@@ -4,13 +4,15 @@ const Project: React.FC<{
   img: string;
   title: string;
   link: string;
-  date: { start: string; end?: string };
+  date: { start: Date; end?: Date };
   body: string;
   tags: string[];
   foot?: string;
 }> = ({ img, title, link, date, body, tags, foot }) => {
   const datePart = () => {
-    return `${date.start} - ${date.end ?? 'Today'}`;
+    return `${date.start.toLocaleDateString()} - ${
+      date.end?.toLocaleDateString() ?? 'Today'
+    }`;
   };
 
   const footer = () => {
@@ -20,9 +22,9 @@ const Project: React.FC<{
   };
 
   return (
-    <Card className="project-item">
-      <div className="col-sm-4 mx-auto">
-        <Card.Img src={img} className="project-img img-fluid" />
+    <Card className="project">
+      <div className="mx-auto">
+        <Card.Img src={img} className="project-img" />
       </div>
 
       <div className="card-body">

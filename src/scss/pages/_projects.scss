@@ -1,18 +1,24 @@
 .projects {
+  // display: grid;
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // justify-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 
-  .project-item {
-    @media (min-width: 992px) {
+  .project {
+    @media (min-width: 768px) {
       flex-direction: row !important;
     }
 
     .project-img {
       flex-direction: row !important;
-      object-fit: cover;
-      flex: 1;
+      object-fit: contain;
+      height: 100%;
+      width: 300px;
+      aspect-ratio: 1 / 1;
+      // flex: 1;
     }
 
     p {
@@ -20,7 +26,7 @@
     }
 
     width: fit-content;
-    max-width: 960px;
+    max-width: 900px;
     justify-content: center;
   }
 }
