@@ -1,17 +1,22 @@
 footer {
+  background: $background-secondary;
   width: 100%;
   margin-top: auto;
 
-  ul {
-    width: 100%;
-  }
-
   .nav-link {
-    fill: $primary;
-    text-align: center;
-    :hover {
-      fill: lighten($primary, 30%);
+    img,
+    svg {
+      width: 20px;
+      height: 20px;
+      fill: $primary;
+      text-align: center;
       transition: 100ms ease-in-out;
+    }
+
+    &:hover {
+      svg {
+        fill: lighten($primary, 30%);
+      }
     }
   }
 }
