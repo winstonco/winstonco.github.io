@@ -1,17 +1,19 @@
-import { Container } from 'react-bootstrap';
+import type { Component } from 'solid-js';
+import { Container } from 'solid-bootstrap';
 
-import Project from '../components/Project';
-import nothingStore from '../assets/images/projects/nothing-store.png';
-import illustraitor from '../assets/images/projects/illustraitor.png';
-import searchHelper from '../assets/images/projects/search-helper.png';
-import odin from '../assets/images/projects/odin-landing-page.png';
-import abw from '../assets/images/projects/background2.png';
-import thisSite from '../assets/images/projects/this-site.png';
+import Project from '../../components/Project';
 
-const Projects = () => {
+// assets
+import illustraitorPng from '../../assets/images/projects/illustraitor.png';
+import searchHelperPng from '../../assets/images/projects/search-helper.png';
+import odinLandingPagePng from '../../assets/images/projects/odin-landing-page.png';
+import alertsBorderWidgetPng from '../../assets/images/projects/alerts-border-widget.png';
+import personalWebsitePng from '../../assets/images/projects/personal-website.png';
+
+const ProjectsPage: Component = () => {
   return (
     <div id="projects-page">
-      <Container className="projects">
+      <Container class="projects">
         {/* <Project
         img={nothingStore}
         title="Nothing Store"
@@ -25,7 +27,18 @@ const Projects = () => {
         foot="In progress! 🛠️"
       /> */}
         <Project
-          img={illustraitor}
+          img={personalWebsitePng}
+          title="Personal Website"
+          link="https://github.com/winstonco/winstonco.github.io"
+          date={{ start: new Date(2022, 2, 3) }}
+          body="This is version 4 of my portfolio website. I like experimenting
+          with new technologies here. In the latest version, I converted from
+          React to SolidJS. On the 'Projects' page, I've compiled other projects
+          that I've finished working on."
+          tags={['SolidJS', 'TypeScript', 'Sass', 'Vite', 'Bootstrap 5']}
+        />
+        <Project
+          img={illustraitorPng}
           title="Illustraitor"
           link="https://illustraitor.onrender.com/"
           date={{ start: new Date(2022, 11, 24), end: new Date(2023, 1, 18) }}
@@ -37,7 +50,7 @@ const Projects = () => {
           tags={['TypeScript', 'Socket.io', 'React', 'MUI', 'Express']}
         />
         <Project
-          img={searchHelper}
+          img={searchHelperPng}
           title="Search Helper"
           link="https://search-helper-production.up.railway.app/"
           date={{ start: new Date(2022, 10, 6), end: new Date(2022, 11, 21) }}
@@ -49,7 +62,7 @@ const Projects = () => {
           tags={['React', 'Sass', 'MongoDB', 'Node', 'Express', 'Lerna']}
         />
         <Project
-          img={odin}
+          img={odinLandingPagePng}
           title="Odin Project - Landing Page"
           link="https://winstonco.org/odin-landing-page"
           date={{ start: new Date(2022, 10, 12), end: new Date(2022, 10, 13) }}
@@ -59,7 +72,7 @@ const Projects = () => {
           tags={['HTML', 'CSS']}
         />
         <Project
-          img={abw}
+          img={alertsBorderWidgetPng}
           title="Alerts Border Widget"
           link="https://alerts-border-widget.onrender.com"
           date={{ start: new Date(2022, 9, 15), end: new Date(2023, 0, 13) }}
@@ -69,19 +82,9 @@ const Projects = () => {
           to events. Sends a custom message to the client through a Websocket."
           tags={['HTML', 'CSS', 'Socket.io', 'Node', 'Express']}
         />
-        <Project
-          img={thisSite}
-          title="This Website"
-          link="https://github.com/winstonco/winstonco.github.io"
-          date={{ start: new Date(2022, 2, 3) }}
-          body="This is version 3.5 of my portfolio website. I rebuilt it
-          using React and split it into more pages instead of all being in one.
-          I'm using Webpack to build it before deploying to GitHub pages."
-          tags={['React-Bootstrap', 'TypeScript', 'Sass', 'Webpack']}
-        />
       </Container>
     </div>
   );
 };
 
-export default Projects;
+export default ProjectsPage;

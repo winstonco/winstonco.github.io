@@ -1,18 +1,20 @@
-import React, { useState } from 'react';
-import { Offcanvas } from 'react-bootstrap';
+import type { Component, Accessor, Setter, JSX } from 'solid-js';
+import { Offcanvas } from 'solid-bootstrap';
 
-const Intro: React.FC<{
-  isDown: boolean;
-  setIsDown: React.Dispatch<React.SetStateAction<boolean>>;
-}> = ({ isDown, setIsDown }) => {
+const Intro: Component<{
+  isDown: Accessor<boolean>;
+  setIsDown: Setter<boolean>;
+}> = (props) => {
+  const { isDown, setIsDown } = props;
+
   const hideIntro = () => {
     setIsDown(false);
     sessionStorage.setItem('introIsDown', 'false');
   };
 
   // Set triangle direction
-  let style: React.CSSProperties = {};
-  if (isDown) {
+  let style: JSX.CSSProperties = {};
+  if (isDown()) {
     // style = { transform: 'rotate(180deg)' };
   } else {
     style = { transform: 'rotate(0)' };
@@ -22,14 +24,20 @@ const Intro: React.FC<{
   let initialTouchY: number;
   let movePos: number;
 
-  const handleTouchStart = (ev: React.TouchEvent<HTMLDivElement>) => {
+  const handleTouchStart: JSX.EventHandler<HTMLDivElement, TouchEvent> = (
+    ev,
+  ) => {
     if (ev.touches.length === 1) {
       const touch = ev.touches.item(0);
-      initialTouchY = touch.clientY;
+      if (touch) {
+        initialTouchY = touch.clientY;
+      }
     }
   };
 
-  const handleTouchMove = (ev: React.TouchEvent<HTMLDivElement>) => {
+  const handleTouchMove: JSX.EventHandler<HTMLDivElement, TouchEvent> = (
+    ev,
+  ) => {
     if (ev.touches.length === 1) {
       const touch = ev.touches.item(0);
       const all = document.getElementById('intro-all');
@@ -40,9 +48,10 @@ const Intro: React.FC<{
     }
   };
 
-  const handleTouchEnd = (
-    ev: React.TouchEvent<HTMLDivElement> | React.MouseEvent<HTMLDivElement>
-  ) => {
+  const handleTouchEnd: JSX.EventHandler<
+    HTMLDivElement,
+    TouchEvent | MouseEvent
+  > = (_) => {
     const all = document.getElementById('intro-all');
     if (all) {
       if (movePos < -100) {
@@ -54,19 +63,23 @@ const Intro: React.FC<{
     dragging = false;
   };
 
-  const handleTouchCancel = (ev: React.TouchEvent<HTMLDivElement>) => {
+  const handleTouchCancel: JSX.EventHandler<HTMLDivElement, TouchEvent> = (
+    _,
+  ) => {
     const all = document.getElementById('intro-all');
     if (all) {
       all.style.top = '0px';
     }
   };
 
-  const handleDragStart = (ev: React.MouseEvent<HTMLDivElement>) => {
+  const handleDragStart: JSX.EventHandler<HTMLDivElement, MouseEvent> = (
+    ev,
+  ) => {
     initialTouchY = ev.clientY;
     dragging = true;
   };
 
-  const handleDrag = (ev: React.MouseEvent<HTMLDivElement>) => {
+  const handleDrag: JSX.EventHandler<HTMLDivElement, MouseEvent> = (ev) => {
     const all = document.getElementById('intro-all');
     if (all && dragging) {
       movePos = ev.clientY - initialTouchY;
@@ -75,10 +88,10 @@ const Intro: React.FC<{
   };
 
   return (
-    <Offcanvas show={isDown} placement="top" id="intro-all">
+    <Offcanvas show={isDown()} placement="top" id="intro-all">
       <div
-        className="intro_screen" // d-none d-sm-flex"
-        onWheel={(ev) => {
+        class="intro_screen" // d-none d-sm-flex"
+        onWheel={(_) => {
           // if (ev.deltaY < 0)
           hideIntro();
         }}
@@ -90,22 +103,22 @@ const Intro: React.FC<{
         onMouseMove={handleDrag}
         onMouseUp={handleTouchEnd}
       >
-        <div className="fulltitle">
-          <code className="code">&lt;h1 class="title"&gt;</code>
-          <h1 className="title font-title">Hi, I'm Winston.</h1>
-          <code className="code">&lt;/h1&gt;</code>
+        <div class="fulltitle">
+          <code class="code">&lt;h1 class="title"&gt;</code>
+          <h1 class="title font-title">Hi, I'm Winston.</h1>
+          <code class="code">&lt;/h1&gt;</code>
           <br />
-          <code className="code">&lt;h3 class="subtitle"&gt;</code>
-          <h3 className="subtitle font-subtitle">Amateur Web Developer</h3>
-          <code className="code">&lt;/h3&gt;</code>
+          <code class="code">&lt;h3 class="subtitle"&gt;</code>
+          <h3 class="subtitle font-subtitle">Amateur Web Developer</h3>
+          <code class="code">&lt;/h3&gt;</code>
         </div>
         <button
-          className="btn"
+          class="btn"
           type="button"
           id="intro_triangle_wrapper"
           onClick={hideIntro}
         >
-          <div style={style} className="triangle_down"></div>
+          <div style={style} class="triangle_down"></div>
         </button>
       </div>
     </Offcanvas>

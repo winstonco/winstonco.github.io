@@ -1,39 +1,15 @@
-import _ from 'lodash';
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+/* @refresh reload */
+import { render } from 'solid-js/web';
+import App from './App';
+import { Router } from '@solidjs/router';
 
 import './scss/app.scss';
-import App from './App';
-import ErrorPage from './components/ErrorPage';
-import Home from './pages/Home';
-import Projects from './pages/Projects';
-import Resume from './pages/Resume';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    errorElement: <ErrorPage />,
-    children: [
-      {
-        index: true,
-        element: <Home />,
-      },
-      {
-        path: 'projects',
-        element: <Projects />,
-      },
-      // {
-      //   path: 'resume',
-      //   element: <Resume />,
-      // },
-    ],
-  },
-]);
-
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+render(
+  () => (
+    <Router>
+      <App />
+    </Router>
+  ),
+  document.getElementById('root')!,
 );

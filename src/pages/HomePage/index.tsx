@@ -1,42 +1,47 @@
-import React, { useState } from 'react';
-import { Col, Container } from 'react-bootstrap';
-import { AiOutlineMail, AiFillGithub } from 'react-icons/ai';
-import img from '../assets/images/portrait-square.png';
+import type { Component, JSX } from 'solid-js';
+import { createSignal } from 'solid-js';
 
-import twitchSvg from '../assets/svg/twitch.svg';
-import linkedInSvg from '../assets/svg/linked-in.svg';
-import tsSvg from '../assets/svg/typescript.svg';
-import jsSvg from '../assets/svg/javascript.svg';
-import reactSvg from '../assets/svg/react.svg';
-import nodejsSvg from '../assets/svg/nodejs.svg';
-import htmlSvg from '../assets/svg/html5.svg';
-import vscodeSvg from '../assets/svg/vscode.svg';
+import { Col, Container } from 'solid-bootstrap';
+import { AiOutlineMail, AiFillGithub } from 'solid-icons/ai';
 
-const Home = () => {
-  const [shownSkill, setShownSkill] = useState('');
+// assets
+import portraitSquarePng from '../../assets/images/portrait-square.png';
+import typescriptSvg from '../../assets/svg/typescript.svg';
+import javascriptSvg from '../../assets/svg/javascript.svg';
+import reactSvg from '../../assets/svg/react.svg';
+import nodeJsSvg from '../../assets/svg/nodejs.svg';
+import html5Svg from '../../assets/svg/html5.svg';
+import vsCodeSvg from '../../assets/svg/vscode.svg';
+import linkedInSvg from '../../assets/svg/linkedin.svg';
+import twitchSvg from '../../assets/svg/twitch.svg';
+
+import Todo from '../../components/Todo';
+
+const HomePage: Component = () => {
+  const [shownSkill, setShownSkill] = createSignal('');
 
   const createSkill: (details: {
     name: string;
     level: 'proficient' | 'intermediate' | 'beginner';
     description: string;
-    icon?: React.ReactNode;
-  }) => React.ReactNode = ({ name, level, description, icon }) => {
+    icon?: JSX.Element;
+  }) => JSX.Element = ({ name, level, description, icon }) => {
     return (
-      <div className={`skill${shownSkill === name ? ' expanded' : ''}`}>
+      <div class={`skill${shownSkill() === name ? ' expanded' : ''}`}>
         <h4
-          className="title"
+          class="title"
           onClick={() => {
-            setShownSkill(shownSkill === name ? '' : name);
+            setShownSkill(shownSkill() === name ? '' : name);
           }}
         >
           {icon}
           {name}
         </h4>
-        <div className="body">
-          <span className={`level level-${level}`}>
+        <div class="body">
+          <span class={`level level-${level}`}>
             Proficiency: {level.toUpperCase()}
           </span>
-          <div className="desc">{description}</div>
+          <div class="desc">{description}</div>
         </div>
       </div>
     );
@@ -44,50 +49,50 @@ const Home = () => {
 
   return (
     <Container fluid="md" id="home-page">
-      <section id="about-me" className="home-page-section">
+      <section id="about-me" class="home-page-section">
         <img
-          className="portrait"
+          class="portrait"
           aria-label="Picture of me"
-          src={img}
+          src={portraitSquarePng}
           draggable={false}
         />
-        <h3 className="font-subsection-title">About Me</h3>
-        <Col lg={8} className="body">
+        <h3 class="font-subsection-title">About Me</h3>
+        <Col lg={8} class="body">
           <p>
             I'm a senior at the University of Hawai'i at Manoa, majoring in
             Computer Science. I love learning new technologies and working on
             personal projects. I'm aiming to be a full-stack developer, if those
             still exist in the future 😅.
           </p>
-          <h4>📖 What I'm doing now:</h4>
-          <p>
-            In my latest project, I wanted to try make a cross-platform app, so
-            I'm learning React Native with Expo. On the side, I'm also reading
-            the Rust book and I also just started reading through the Svelte
-            tutorials.
-          </p>
+          <h4>📖 What I'm working on:</h4>
+          <ul>
+            <li>A Go-HTMX web app framework</li>
+            <li>A Flutter app called "Today I Learned"</li>
+            <li>Chugging through the Rust book...very slowly</li>
+          </ul>
         </Col>
       </section>
-      <section id="skills" className="home-page-section">
-        <h3 className="font-subsection-title">Skills</h3>
-        <div className="skills-row">
+      <section id="skills" class="home-page-section">
+        <h3 class="font-subsection-title">Skills</h3>
+        <div class="skills-row">
           {createSkill({
             name: 'TypeScript',
-            icon: <img src={tsSvg} alt="TypeScript logo" />,
+            icon: <img src={typescriptSvg} alt="TypeScript logo" />,
             level: 'intermediate',
             description: `TypeScript is my favorite language. After first learning
             JS and trying TypeScript, I could never go back! Adding strong typing to
-            a language I already enjoy makes for a great developer experience. There
+            JS was probably one of mankind's smartest decisions, next to bidets. There
             are many tricks and small features I need to learn before I can call
             myself a true TypeScript wizard.`,
           })}
           {createSkill({
             name: 'JavaScript',
-            icon: <img src={jsSvg} alt="JavaScript logo" />,
+            icon: <img src={javascriptSvg} alt="JavaScript logo" />,
             level: 'proficient',
-            description: `JavaScript is my 2nd favorite language and the language I
-            am most proficient in. It's the language I used when I first focused on
-            learning to code. I am familiar with ES6 syntax, and many newer features.`,
+            description: `JavaScript is my 2nd favorite language (if it counts
+            as different from TS) and the language I am most proficient in. It's
+            the language I used when I first focused on learning to code. I am
+            familiar with ES6 syntax, and many newer features.`,
           })}
           {createSkill({
             name: 'React',
@@ -99,17 +104,17 @@ const Home = () => {
             components, etc. One thing I want to learn is using server components.`,
           })}
         </div>
-        <div className="skills-row">
+        <div class="skills-row">
           {createSkill({
             name: 'NodeJS',
-            icon: <img src={nodejsSvg} alt="NodeJS logo" />,
+            icon: <img src={nodeJsSvg} alt="NodeJS logo" />,
             level: 'beginner',
             description: `When writing for backend, I am most familiar with NodeJS. I
             am still a beginner at using it, but am eager to continue learning.`,
           })}
           {createSkill({
             name: 'HTML + CSS',
-            icon: <img src={htmlSvg} alt="HTML5 logo" />,
+            icon: <img src={html5Svg} alt="HTML5 logo" />,
             level: 'intermediate',
             description: `I am comfortable working with plain HTML and CSS. I'd label
             myself as 'intermediate' because I am still learning how to write good,
@@ -118,7 +123,7 @@ const Home = () => {
           })}
           {createSkill({
             name: 'VSCode',
-            icon: <img src={vscodeSvg} alt="VSCode logo" />,
+            icon: <img src={vsCodeSvg} alt="VSCode logo" />,
             level: 'proficient',
             description: `VSCode is my go-to text editor for writing code. I've been
             using it since I started learning to code, and love the customizability
@@ -126,30 +131,28 @@ const Home = () => {
             that improve my productivity.`,
           })}
         </div>
+        <Todo todo="Add Go and Neovim" />
       </section>
-      <section id="contact" className="home-page-section">
-        <h3 className="font-subsection-title">Contact Me</h3>
-        <div className="contact-methods">
-          <a href="mailto: winstonco@live.com" className="contact-method">
+      <section id="contact" class="home-page-section">
+        <h3 class="font-subsection-title">Contact Me</h3>
+        <div class="contact-methods">
+          <a href="mailto: winstonco@live.com" class="contact-method">
             <AiOutlineMail /> <span>winstonco@live.com</span>
           </a>
         </div>
       </section>
-      <section id="more" className="home-page-section">
-        <h3 className="font-subsection-title">More Links...</h3>
+      <section id="more" class="home-page-section">
+        <h3 class="font-subsection-title">More Links...</h3>
         <small>They are in the footer too!</small>
-        <div className="contact-methods">
-          <a href="https://github.com/winstonco/" className="contact-method">
+        <div class="contact-methods">
+          <a href="https://github.com/winstonco/" class="contact-method">
             <AiFillGithub /> <span>winstonco</span>
           </a>
-          <a
-            href="https://linkedin.com/in/winston-co/"
-            className="contact-method"
-          >
+          <a href="https://linkedin.com/in/winston-co/" class="contact-method">
             <img src={linkedInSvg} alt="Linked-In logo" />{' '}
             <span>winston-co</span>
           </a>
-          <a href="https://twitch.tv/frostfireftw/" className="contact-method">
+          <a href="https://twitch.tv/frostfireftw/" class="contact-method">
             <img src={twitchSvg} alt="Twitch Logo" /> <span>frostfireftw</span>
           </a>
         </div>
@@ -158,4 +161,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

@@ -1,7 +1,8 @@
-import { Container, Nav, Navbar } from 'react-bootstrap';
-import { LinkContainer } from 'react-router-bootstrap';
+import type { Component } from 'solid-js';
+import { Container, Nav, Navbar } from 'solid-bootstrap';
+import { A } from '@solidjs/router';
 
-const Header: React.FC = () => {
+const Header: Component = () => {
   return (
     <header>
       <Navbar
@@ -14,19 +15,13 @@ const Header: React.FC = () => {
         <Container>
           <Navbar.Toggle></Navbar.Toggle>
           <Navbar.Collapse>
-            <Nav
-              fill
-              className="justify-content-start me-auto align-items-start"
-            >
-              <LinkContainer to={'/'}>
-                <Nav.Link>About Me</Nav.Link>
-              </LinkContainer>
-              <LinkContainer to={'/projects'}>
-                <Nav.Link>Projects</Nav.Link>
-              </LinkContainer>
-              {/* <LinkContainer to={'/resume'}>
-                <Nav.Link>Resume</Nav.Link>
-              </LinkContainer> */}
+            <Nav fill class="justify-content-start me-auto align-items-start">
+              <Nav.Link as={A} href="/">
+                Home
+              </Nav.Link>
+              <Nav.Link as={A} href="/projects">
+                Projects
+              </Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

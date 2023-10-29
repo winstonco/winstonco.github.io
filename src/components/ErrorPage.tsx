@@ -1,5 +1,5 @@
 // https://reactrouter.com/en/main/start/tutorial
-
+import React from 'react';
 import { isRouteErrorResponse, useRouteError } from 'react-router-dom';
 
 const ErrorPage = () => {
@@ -14,6 +14,7 @@ const ErrorPage = () => {
         </p>
       );
     }
+    return undefined;
   };
 
   return (
