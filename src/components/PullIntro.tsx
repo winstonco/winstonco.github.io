@@ -1,23 +1,21 @@
-import { useEffect, useState } from 'react';
+import type { Component, Accessor, Setter, JSX } from 'solid-js';
+import { createSignal, createEffect, onCleanup } from 'solid-js';
 
-import pullString from '../assets/svg/pull-string.svg';
+// assets
+import pullStringSvg from '../assets/svg/pull-string.svg';
 
-const PullIntro = ({
-  isDown,
-  setIsDown,
-}: {
-  isDown: boolean;
-  setIsDown: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
-  const [dragging, setDragging] = useState<boolean>(false);
-  const [initialTouchY, setInitialTouchY] = useState<number>(0);
+const PullIntro: Component<{
+  isDown: Accessor<boolean>;
+  setIsDown: Setter<boolean>;
+}> = (props) => {
+  const { setIsDown } = props;
+  const [dragging, setDragging] = createSignal<boolean>(false);
+  const [initialTouchY, setInitialTouchY] = createSignal<number>(0);
   let movePos: number;
   const maxMoveY = 25;
   const wiggleRoomY = 4;
 
-  const handleTouchEnd = (
-    ev: React.MouseEvent<HTMLDivElement> | MouseEvent
-  ) => {
+  const handleTouchEnd = (ev: MouseEvent) => {
     ev.preventDefault();
     const pull = document.getElementById('pull-intro');
     if (pull) {
@@ -34,23 +32,28 @@ const PullIntro = ({
     setDragging(false);
   };
 
-  useEffect(() => {
-    document
-      .getElementById('root')
-      ?.addEventListener('mouseup', handleTouchEnd);
-  }, [handleTouchEnd]);
+  createEffect(() => {
+    const root = document.getElementById('root');
+    root?.addEventListener('mouseup', handleTouchEnd);
 
-  const handleDragStart = (ev: React.MouseEvent<HTMLDivElement>) => {
+    onCleanup(() => {
+      root?.removeEventListener('mouseup', handleTouchEnd);
+    });
+  });
+
+  const handleDragStart: JSX.EventHandler<HTMLDivElement, MouseEvent> = (
+    ev,
+  ) => {
     ev.preventDefault();
     setInitialTouchY(ev.clientY);
     setDragging(true);
   };
 
-  const handleDrag = (ev: React.MouseEvent<HTMLDivElement>) => {
+  const handleDrag: JSX.EventHandler<HTMLDivElement, MouseEvent> = (ev) => {
     ev.preventDefault();
     const pull = document.getElementById('pull-intro');
-    if (pull && dragging) {
-      movePos = ev.clientY - initialTouchY;
+    if (pull && dragging()) {
+      movePos = ev.clientY - initialTouchY();
       if (movePos <= maxMoveY) {
         pull.style.top = movePos + 'px';
       }
@@ -63,7 +66,7 @@ const PullIntro = ({
       onMouseMove={handleDrag}
       onMouseUp={handleTouchEnd}
     >
-      <img id="pull-intro" src={pullString} alt="pull string" />
+      <img id="pull-intro" src={pullStringSvg} alt="pull string" />
       <span id="pull-intro-label">Pull Me!</span>
     </div>
   );

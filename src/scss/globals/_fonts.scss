@@ -1,5 +1,9 @@
 // Main website font: Open Sans
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+// Code font: JetBrains Mono
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
+// Other font: Roboto
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
 
 $font-bold: 700;
 $font-normal: 400;
@@ -62,7 +66,7 @@ $font-light: 300;
 .code {
   font-size: 1.5rem;
   font-weight: $font-bold;
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
   position: relative;
   bottom: 2px;
 }
