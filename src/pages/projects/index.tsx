@@ -1,7 +1,4 @@
 import type { Component } from 'solid-js';
-import { Container } from 'solid-bootstrap';
-
-import Project from '../../components/Project';
 
 // assets
 import illustraitorPng from '../../assets/images/projects/illustraitor.png';
@@ -10,10 +7,25 @@ import odinLandingPagePng from '../../assets/images/projects/odin-landing-page.p
 import alertsBorderWidgetPng from '../../assets/images/projects/alerts-border-widget.png';
 import personalWebsitePng from '../../assets/images/projects/personal-website.png';
 
+import Container from '../../components/Container';
+import Project from '../../components/Project';
+
 const ProjectsPage: Component = () => {
   return (
-    <div id="projects-page">
-      <Container class="projects">
+    <Container id="projects-page">
+      <h1>Personal Projects</h1>
+      <p>
+        Here&apos;s a list of some projects I&apos;m proud of. There are a lot
+        more on my <a href="https://github.com/winstonco">GitHub</a> that
+        I&apos;ve started, but haven&apos;t finished yet.
+      </p>
+      <p>
+        One that I am currently working on is{' '}
+        <a href="https://github.com/winstonco/go-htmx">go-htmx</a>. I wanted to
+        make a simple web framework, with some nice features like file-based
+        routing.
+      </p>
+      <div class="projects">
         {/* <Project
         img={nothingStore}
         title="Nothing Store"
@@ -33,9 +45,9 @@ const ProjectsPage: Component = () => {
           date={{ start: new Date(2022, 2, 3) }}
           body="This is version 4 of my portfolio website. I like experimenting
           with new technologies here. In the latest version, I converted from
-          React to SolidJS. On the 'Projects' page, I've compiled other projects
-          that I've finished working on."
-          tags={['SolidJS', 'TypeScript', 'Sass', 'Vite', 'Bootstrap 5']}
+          React to SolidJS and stopped using Bootstrap. On the 'Projects' page,
+          I've compiled other projects that I've finished working on."
+          tags={['SolidJS', 'TypeScript', 'Sass', 'Vite']}
         />
         <Project
           img={illustraitorPng}
@@ -82,8 +94,8 @@ const ProjectsPage: Component = () => {
           to events. Sends a custom message to the client through a Websocket."
           tags={['HTML', 'CSS', 'Socket.io', 'Node', 'Express']}
         />
-      </Container>
-    </div>
+      </div>
+    </Container>
   );
 };
 

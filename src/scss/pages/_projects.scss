@@ -1,24 +1,36 @@
 .projects {
-  // display: grid;
-  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  // justify-items: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2rem;
 
-  .project {
-    @media (min-width: 768px) {
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 7px 15px black;
+
+    @media (min-width: 750px) {
       flex-direction: row !important;
     }
 
     .project-img {
       flex-direction: row !important;
-      object-fit: contain;
-      height: 100%;
-      width: 300px;
-      aspect-ratio: 1 / 1;
-      // flex: 1;
+      outline: 1px solid black;
+      object-fit: cover;
+      object-position: center top;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+
+      @media (min-width: 750px) {
+        width: 300px;
+        aspect-ratio: 1 / 1;
+      }
+    }
+
+    .body {
+      padding: 1rem;
     }
 
     p {
@@ -29,7 +41,12 @@
     max-width: 900px;
     justify-content: center;
 
-    .badge {
+    .pill {
+      display: inline-block;
+      border-radius: 1000px;
+      padding: 0 6px;
+      margin-right: 6px;
+
       $badge-color: rgb(0, 101, 160);
       background-color: $badge-color !important;
       color: lighten($badge-color, 70%) !important;

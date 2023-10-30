@@ -1,6 +1,6 @@
 import type { Component } from 'solid-js';
 import { A } from '@solidjs/router';
-import { Container } from 'solid-bootstrap';
+import Container from '../../components/Container';
 
 const NotFoundPage: Component = () => {
   return (

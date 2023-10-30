@@ -1,7 +1,6 @@
 import type { Component, JSX } from 'solid-js';
 import { createSignal } from 'solid-js';
 
-import { Col, Container } from 'solid-bootstrap';
 import { AiOutlineMail, AiFillGithub } from 'solid-icons/ai';
 
 // assets
@@ -13,9 +12,10 @@ import nodeJsSvg from '../../assets/svg/nodejs.svg';
 import html5Svg from '../../assets/svg/html5.svg';
 import vsCodeSvg from '../../assets/svg/vscode.svg';
 import linkedInSvg from '../../assets/svg/linkedin.svg';
-import twitchSvg from '../../assets/svg/twitch.svg';
+// import twitchSvg from '../../assets/svg/twitch.svg';
 
 import Todo from '../../components/Todo';
+import Container from '../../components/Container';
 
 const HomePage: Component = () => {
   const [shownSkill, setShownSkill] = createSignal('');
@@ -48,7 +48,7 @@ const HomePage: Component = () => {
   };
 
   return (
-    <Container fluid="md" id="home-page">
+    <Container id="home-page">
       <section id="about-me" class="home-page-section">
         <img
           class="portrait"
@@ -57,7 +57,7 @@ const HomePage: Component = () => {
           draggable={false}
         />
         <h3 class="font-subsection-title">About Me</h3>
-        <Col lg={8} class="body">
+        <div class="body">
           <p>
             I'm a senior at the University of Hawai'i at Manoa, majoring in
             Computer Science. I love learning new technologies and working on
@@ -70,7 +70,7 @@ const HomePage: Component = () => {
             <li>A Flutter app called "Today I Learned"</li>
             <li>Chugging through the Rust book...very slowly</li>
           </ul>
-        </Col>
+        </div>
       </section>
       <section id="skills" class="home-page-section">
         <h3 class="font-subsection-title">Skills</h3>
@@ -152,9 +152,9 @@ const HomePage: Component = () => {
             <img src={linkedInSvg} alt="Linked-In logo" />{' '}
             <span>winston-co</span>
           </a>
-          <a href="https://twitch.tv/frostfireftw/" class="contact-method">
+          {/* <a href="https://twitch.tv/frostfireftw/" class="contact-method">
             <img src={twitchSvg} alt="Twitch Logo" /> <span>frostfireftw</span>
-          </a>
+          </a> */}
         </div>
       </section>
     </Container>

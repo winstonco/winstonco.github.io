@@ -19,21 +19,15 @@
     .portrait {
       border-radius: 50%;
       object-fit: cover;
-    }
+      width: 100%;
 
-    @media (min-width: 576px) {
-      .portrait {
+      @media (min-width: 440px) {
         width: 400px;
       }
     }
 
-    @media (max-width: 576px) {
-      .portrait {
-        width: 100%;
-      }
-    }
-
     .body {
+      max-width: 780px;
       p {
         font-size: 1.2rem;
       }

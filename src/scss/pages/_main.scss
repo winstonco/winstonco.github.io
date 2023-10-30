@@ -25,12 +25,7 @@ body {
 }
 
 .main {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
-  color: $primary;
-  background-color: $background;
-
-  $header-height: $nav-link-height + 2 * $nav-link-padding-y;
+  $header-height: $navbar-height;
   padding-top: $header-height + 1rem;
   padding-bottom: 1rem;
   position: relative;
