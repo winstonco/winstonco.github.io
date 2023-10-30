@@ -1,0 +1,124 @@
+header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  z-index: 100;
+  background-color: $primary;
+  height: $navbar-height;
+
+  .nav-items {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  a {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    color: darken(white, 20%);
+    text-decoration: none;
+
+    &.active {
+      color: white;
+      font-weight: 500;
+    }
+
+    &:hover {
+      background-color: lighten($primary, 10%) !important;
+    }
+  }
+}
+
+.custom-navbar {
+  height: 100%;
+}
+
+.custom-sidebar {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  padding-left: 1.5rem;
+
+  $animation-duration: 100ms;
+
+  $patty-height: 2px;
+  $patty-gap: 8px;
+
+  .hamburger {
+    position: relative;
+
+    $hamburger-height: 3 * $patty-height + 2 * $patty-gap;
+    $hamburger-width: $hamburger-height * 1.4;
+    height: $hamburger-height;
+    width: $hamburger-width;
+
+    div {
+      position: absolute;
+      width: 100%;
+      height: $patty-height;
+      background-color: white;
+      transition: $animation-duration;
+    }
+
+    .top {
+      top: 0;
+    }
+    .mid {
+      top: $patty-height + $patty-gap;
+    }
+    .bot {
+      top: 2 * ($patty-height + $patty-gap);
+    }
+  }
+
+  &.expanded {
+    .top {
+      transform: translateY($patty-gap + $patty-height) rotate(45deg);
+    }
+    .mid {
+      transform: rotate(-45deg);
+    }
+    .bot {
+      transform: translateY(-$patty-gap - $patty-height) rotate(45deg);
+    }
+  }
+
+  .body {
+    $sidebar-width: 250px;
+
+    position: absolute;
+    top: $navbar-height;
+    transition: left $animation-duration;
+    left: -$sidebar-width;
+
+    width: $sidebar-width;
+    height: calc(100vh - $navbar-height);
+
+    background-color: $primary;
+    color: white;
+
+    .nav-items {
+      height: fit-content;
+      flex-direction: column;
+      align-items: center;
+
+      a {
+        font-size: 1.1rem;
+        width: 100%;
+      }
+    }
+  }
+
+  &.expanded {
+    .body {
+      left: 0;
+    }
+  }
+}

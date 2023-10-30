@@ -1,7 +1,6 @@
 import type { Component, JSX } from 'solid-js';
 import { createSignal } from 'solid-js';
 
-import { Col, Container } from 'solid-bootstrap';
 import { AiOutlineMail, AiFillGithub } from 'solid-icons/ai';
 
 // assets
@@ -13,9 +12,10 @@ import nodeJsSvg from '../../assets/svg/nodejs.svg';
 import html5Svg from '../../assets/svg/html5.svg';
 import vsCodeSvg from '../../assets/svg/vscode.svg';
 import linkedInSvg from '../../assets/svg/linkedin.svg';
-import twitchSvg from '../../assets/svg/twitch.svg';
+// import twitchSvg from '../../assets/svg/twitch.svg';
 
 import Todo from '../../components/Todo';
+import Container from '../../components/Container';
 
 const HomePage: Component = () => {
   const [shownSkill, setShownSkill] = createSignal('');
@@ -48,7 +48,7 @@ const HomePage: Component = () => {
   };
 
   return (
-    <Container fluid="md" id="home-page">
+    <Container id="home-page">
       <section id="about-me" class="home-page-section">
         <img
           class="portrait"
@@ -57,7 +57,7 @@ const HomePage: Component = () => {
           draggable={false}
         />
         <h3 class="font-subsection-title">About Me</h3>
-        <Col lg={8} class="body">
+        <div class="body">
           <p>
             I'm a senior at the University of Hawai'i at Manoa, majoring in
             Computer Science. I love learning new technologies and working on
@@ -70,7 +70,7 @@ const HomePage: Component = () => {
             <li>A Flutter app called "Today I Learned"</li>
             <li>Chugging through the Rust book...very slowly</li>
           </ul>
-        </Col>
+        </div>
       </section>
       <section id="skills" class="home-page-section">
         <h3 class="font-subsection-title">Skills</h3>
@@ -79,29 +79,22 @@ const HomePage: Component = () => {
             name: 'TypeScript',
             icon: <img src={typescriptSvg} alt="TypeScript logo" />,
             level: 'intermediate',
-            description: `TypeScript is my favorite language. After first learning
-            JS and trying TypeScript, I could never go back! Adding strong typing to
-            JS was probably one of mankind's smartest decisions, next to bidets. There
-            are many tricks and small features I need to learn before I can call
-            myself a true TypeScript wizard.`,
+            description:
+              "TypeScript is my favorite language. After first learning JS and trying TypeScript, I could never go back! Adding strong typing to JS was probably one of mankind's smartest decisions, next to bidets. There are many tricks and small features I need to learn before I can call myself a true TypeScript wizard.",
           })}
           {createSkill({
             name: 'JavaScript',
             icon: <img src={javascriptSvg} alt="JavaScript logo" />,
             level: 'proficient',
-            description: `JavaScript is my 2nd favorite language (if it counts
-            as different from TS) and the language I am most proficient in. It's
-            the language I used when I first focused on learning to code. I am
-            familiar with ES6 syntax, and many newer features.`,
+            description:
+              "JavaScript is my 2nd favorite language (if it counts as different from TS) and the language I am most proficient in. It's the language I used when I first focused on learning to code. I am familiar with ES6 syntax, and many newer features.",
           })}
           {createSkill({
             name: 'React',
             icon: <img src={reactSvg} alt="React logo" />,
             level: 'proficient',
-            description: `React is my frontend framework of choice. I've made many
-            projects using React, in both JavaScript and TypeScript. I'm very familiar
-            with the fundamentals of React, such as state management, hooks, function
-            components, etc. One thing I want to learn is using server components.`,
+            description:
+              "React is my frontend framework of choice. I've made many projects using React, in both JavaScript and TypeScript. I'm very familiar with the fundamentals of React, such as state management, hooks, function components, etc. One thing I want to learn is using server components.",
           })}
         </div>
         <div class="skills-row">
@@ -109,26 +102,22 @@ const HomePage: Component = () => {
             name: 'NodeJS',
             icon: <img src={nodeJsSvg} alt="NodeJS logo" />,
             level: 'beginner',
-            description: `When writing for backend, I am most familiar with NodeJS. I
-            am still a beginner at using it, but am eager to continue learning.`,
+            description:
+              'When writing for backend, I am most familiar with NodeJS. I am still a beginner at using it, but am eager to continue learning.',
           })}
           {createSkill({
             name: 'HTML + CSS',
             icon: <img src={html5Svg} alt="HTML5 logo" />,
             level: 'intermediate',
-            description: `I am comfortable working with plain HTML and CSS. I'd label
-            myself as 'intermediate' because I am still learning how to write good,
-            semantic HTML, that supports web accessibility. I'm also always learning
-            new tricks with CSS.`,
+            description:
+              "I am comfortable working with plain HTML and CSS. I'd label myself as 'intermediate' because I am still learning how to write good, semantic HTML, that supports web accessibility. I'm also always learning new tricks with CSS.",
           })}
           {createSkill({
             name: 'VSCode',
             icon: <img src={vsCodeSvg} alt="VSCode logo" />,
             level: 'proficient',
-            description: `VSCode is my go-to text editor for writing code. I've been
-            using it since I started learning to code, and love the customizability
-            it provides. I'm constantly learning new shortcuts and finding new plugins
-            that improve my productivity.`,
+            description:
+              "VSCode is my go-to text editor for writing code. I've been using it since I started learning to code, and love the customizability it provides. I'm constantly learning new shortcuts and finding new plugins that improve my productivity.",
           })}
         </div>
         <Todo todo="Add Go and Neovim" />
@@ -146,15 +135,15 @@ const HomePage: Component = () => {
         <small>They are in the footer too!</small>
         <div class="contact-methods">
           <a href="https://github.com/winstonco/" class="contact-method">
-            <AiFillGithub /> <span>winstonco</span>
+            <AiFillGithub /> <span>github.com/winstonco</span>
           </a>
           <a href="https://linkedin.com/in/winston-co/" class="contact-method">
             <img src={linkedInSvg} alt="Linked-In logo" />{' '}
-            <span>winston-co</span>
+            <span>linkedin.com/in/winston-co</span>
           </a>
-          <a href="https://twitch.tv/frostfireftw/" class="contact-method">
+          {/* <a href="https://twitch.tv/frostfireftw/" class="contact-method">
             <img src={twitchSvg} alt="Twitch Logo" /> <span>frostfireftw</span>
-          </a>
+          </a> */}
         </div>
       </section>
     </Container>

@@ -1,24 +1,18 @@
-import type { Component, Accessor, Setter, JSX } from 'solid-js';
-import { Offcanvas } from 'solid-bootstrap';
+import { IoTriangleSharp } from 'solid-icons/io';
+import { Component, Accessor, JSX, onMount } from 'solid-js';
 
 const Intro: Component<{
   isDown: Accessor<boolean>;
-  setIsDown: Setter<boolean>;
+  hideIntro: VoidFunction;
 }> = (props) => {
-  const { isDown, setIsDown } = props;
+  const { isDown, hideIntro } = props;
 
-  const hideIntro = () => {
-    setIsDown(false);
-    sessionStorage.setItem('introIsDown', 'false');
-  };
-
-  // Set triangle direction
-  let style: JSX.CSSProperties = {};
-  if (isDown()) {
-    // style = { transform: 'rotate(180deg)' };
-  } else {
-    style = { transform: 'rotate(0)' };
-  }
+  onMount(() => {
+    if (isDown()) {
+      const body = document.querySelector('body');
+      body?.style.setProperty('overflow', 'hidden');
+    }
+  });
 
   let dragging: boolean = false;
   let initialTouchY: number;
@@ -56,9 +50,8 @@ const Intro: Component<{
     if (all) {
       if (movePos < -100) {
         hideIntro();
-      } else {
-        all.style.top = '0px';
       }
+      all.style.top = '0px';
     }
     dragging = false;
   };
@@ -88,11 +81,10 @@ const Intro: Component<{
   };
 
   return (
-    <Offcanvas show={isDown()} placement="top" id="intro-all">
+    <div class={isDown() ? 'active' : ''} id="intro-all">
       <div
-        class="intro_screen" // d-none d-sm-flex"
+        class="intro-screen"
         onWheel={(_) => {
-          // if (ev.deltaY < 0)
           hideIntro();
         }}
         onTouchStart={handleTouchStart}
@@ -104,24 +96,37 @@ const Intro: Component<{
         onMouseUp={handleTouchEnd}
       >
         <div class="fulltitle">
-          <code class="code">&lt;h1 class="title"&gt;</code>
-          <h1 class="title font-title">Hi, I'm Winston.</h1>
-          <code class="code">&lt;/h1&gt;</code>
+          <code class="code">&lt;</code>
+          <code class="code-keyword">h1 </code>
+          <code class="code-class">class</code>
+          <code class="code">=</code>
+          <code class="code-string">"title"</code>
+          <code class="code">&gt;</code>
+          <code class="code-text">
+            <h1 class="title font-title">Hi, I'm Winston.</h1>
+          </code>
+          <code class="code">&lt;/</code>
+          <code class="code-keyword">h1</code>
+          <code class="code">&gt;</code>
           <br />
-          <code class="code">&lt;h3 class="subtitle"&gt;</code>
-          <h3 class="subtitle font-subtitle">Amateur Web Developer</h3>
-          <code class="code">&lt;/h3&gt;</code>
+          <code class="code">&lt;</code>
+          <code class="code-keyword">h2 </code>
+          <code class="code-class">class</code>
+          <code class="code">=</code>
+          <code class="code-string">"subtitle"</code>
+          <code class="code">&gt;</code>
+          <code class="code-text">
+            <h2 class="subtitle font-subtitle">Amateur Web Developer</h2>
+          </code>
+          <code class="code">&lt;/</code>
+          <code class="code-keyword">h2</code>
+          <code class="code">&gt;</code>
         </div>
-        <button
-          class="btn"
-          type="button"
-          id="intro_triangle_wrapper"
-          onClick={hideIntro}
-        >
-          <div style={style} class="triangle_down"></div>
+        <button type="button" id="intro-triangle-wrapper" onClick={hideIntro}>
+          <IoTriangleSharp size={36} class="triangle-down" />
         </button>
       </div>
-    </Offcanvas>
+    </div>
   );
 };
 

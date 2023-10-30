@@ -4,8 +4,14 @@ const Todo: Component<{ todo?: string }> = (props = { todo: '' }) => {
   return (
     <div class="todo">
       <p
-        class="py-2 m-0 text-danger text-center"
-        style={{ 'font-size': '1.0rem' }}
+        style={{
+          'font-size': '1.0rem',
+          padding: '1rem',
+          margin: 0,
+          'text-align': 'center',
+          color: 'goldenrod',
+          'font-weight': 'bold',
+        }}
       >
         TODO: {props.todo}
       </p>

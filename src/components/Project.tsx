@@ -1,6 +1,4 @@
-import { Component } from 'solid-js';
-import { For } from 'solid-js';
-import { Badge, Card } from 'solid-bootstrap';
+import { For, type Component, Show } from 'solid-js';
 
 const Project: Component<{
   img: string;
@@ -18,41 +16,27 @@ const Project: Component<{
     }`;
   };
 
-  const footer = () => {
-    if (foot) {
-      return <Card.Text class="text">{foot}</Card.Text>;
-    }
-    return;
-  };
-
   return (
-    <Card class="project">
-      <div class="mx-auto">
-        <Card.Img src={img} class="project-img" />
-      </div>
+    <div class="project-card">
+      <img src={img} class="project-img" />
 
-      <div class="card-body">
-        <Card.Title
-          as="a"
+      <div class="body">
+        <a
           href={link}
           target="_blank"
           rel="noopener noreferrer"
-          class="card-title font-article-title"
+          class="title font-article-title"
         >
           {title}
-        </Card.Title>
-        <Card.Subtitle class="font-date">{datePart()}</Card.Subtitle>
-        <Card.Text class="text">{body}</Card.Text>
-        <For each={tags}>
-          {(tag, _) => (
-            <Badge pill bg="secondary" class="me-1">
-              {tag}
-            </Badge>
-          )}
-        </For>
-        {footer()}
+        </a>
+        <div class="font-date">{datePart()}</div>
+        <div class="text">{body}</div>
+        <For each={tags}>{(tag, _) => <div class="pill">{tag}</div>}</For>
+        <Show when={foot}>
+          <div class="text">{foot}</div>
+        </Show>
       </div>
-    </Card>
+    </div>
   );
 };
 

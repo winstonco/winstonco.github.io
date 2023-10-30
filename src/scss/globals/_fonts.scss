@@ -42,7 +42,7 @@ $font-light: 300;
 }
 
 .font-title {
-  font-size: 6rem;
+  font-size: 4rem;
 }
 
 .font-subtitle {
@@ -67,6 +67,63 @@ $font-light: 300;
   font-size: 1.5rem;
   font-weight: $font-bold;
   font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+  color: rgb(221, 221, 221);
   position: relative;
   bottom: 2px;
+
+  &-keyword {
+    @extend .code;
+    color: rgb(255, 28, 179);
+  }
+  &-class {
+    @extend .code;
+    color: rgb(81, 216, 164);
+  }
+  &-string {
+    @extend .code;
+    color: rgb(255, 209, 110);
+  }
+  &-text {
+    @extend .code;
+    color: rgb(255, 255, 255);
+  }
+}
+
+h1 {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+h6 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+small {
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
 }

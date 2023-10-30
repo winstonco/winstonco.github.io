@@ -3,7 +3,16 @@ footer {
   width: 100%;
   margin-top: auto;
 
-  .nav-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+
+  a {
+    margin: 1rem;
+    height: 20px;
+
     img,
     svg {
       width: 20px;

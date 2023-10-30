@@ -18,20 +18,15 @@ body {
 }
 
 .App {
-  height: 100vh;
   background-color: $background;
   display: flex;
   flex-direction: column;
 }
 
 .main {
-  font-family: 'Open Sans', sans-serif;
-  font-weight: normal;
-  color: $primary;
-  background-color: $background;
-
-  $header-height: $nav-link-height + 2 * $nav-link-padding-y;
-  padding-top: $header-height + 1rem;
+  $header-height: $navbar-height;
+  margin-top: $header-height;
+  padding-top: 1rem;
   padding-bottom: 1rem;
   position: relative;
 }
