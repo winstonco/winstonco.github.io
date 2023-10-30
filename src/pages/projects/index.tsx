@@ -31,10 +31,7 @@ const ProjectsPage: Component = () => {
         title="Nothing Store"
         link="https://nothing-store.vercel.app/"
         date={{ start: '1/14/2023' }}
-        body="A VERY legitimate online store using Stripe where users can
-        pay money to me in exchange for an image of an empty paper bag. Okay, but
-        actually, I just wanted to try setting up a store with Stripe while learning
-        a new tech stack. As a bonus, maybe someone will be duped into giving me money!"
+        body="A VERY legitimate online store using Stripe where users can pay money to me in exchange for an image of an empty paper bag. Okay, but actually, I just wanted to try setting up a store with Stripe while learning  a new tech stack. As a bonus, maybe someone will be duped into giving me money!"
         tags={['TypeScript', 'Next.js', 'Tailwind CSS', 'Pocketbase (maybe)']}
         foot="In progress! 🛠️"
       /> */}
@@ -43,10 +40,7 @@ const ProjectsPage: Component = () => {
           title="Personal Website"
           link="https://github.com/winstonco/winstonco.github.io"
           date={{ start: new Date(2022, 2, 3) }}
-          body="This is version 4 of my portfolio website. I like experimenting
-          with new technologies here. In the latest version, I converted from
-          React to SolidJS and stopped using Bootstrap. On the 'Projects' page,
-          I've compiled other projects that I've finished working on."
+          body="This is version 4 of my portfolio website. I like experimenting with new technologies here. In the latest version, I converted from React to SolidJS and stopped using Bootstrap. I also switched to using Vite to build the app since Webpack is huge pain comparatively. On the 'Projects' page, I've compiled other projects that I've finished working on."
           tags={['SolidJS', 'TypeScript', 'Sass', 'Vite']}
         />
         <Project
@@ -54,11 +48,7 @@ const ProjectsPage: Component = () => {
           title="Illustraitor"
           link="https://illustraitor.onrender.com/"
           date={{ start: new Date(2022, 11, 24), end: new Date(2023, 1, 18) }}
-          body="The goal of this project was to learn Typescript. It is a party game
-          with hand-drawn graphics, where everone is given the same prompt to draw
-          except one person, who has to try blend in with the crowd. Each player takes
-          turns continuing the drawing until the end of the game, when players must
-          guess who the imposter is."
+          body="The goal of this project was to learn Typescript. It is a party game with hand-drawn graphics, where everone is given the same prompt to draw except one person, who has to try blend in with the crowd. Each player takes turns continuing the drawing until the end of the game, when players must guess who the imposter is."
           tags={['TypeScript', 'Socket.io', 'React', 'MUI', 'Express']}
         />
         <Project
@@ -66,11 +56,7 @@ const ProjectsPage: Component = () => {
           title="Search Helper"
           link="https://search-helper-production.up.railway.app/"
           date={{ start: new Date(2022, 10, 6), end: new Date(2022, 11, 21) }}
-          body="My first full stack web application. It finds search results from
-          Google and the Stack Exchange network. Results are displayed in a sortable
-          list, and can be favorited by a user. Users and favorited results are
-          stored on a MongoDB database. The project is a monorepo and uses Lerna to
-          manage it."
+          body="My first full stack web application. It finds search results from Google and the Stack Exchange network. Results are displayed in a sortable list, and can be favorited by a user. Users and favorited results are stored on a MongoDB database. The project is a monorepo and uses Lerna to manage it."
           tags={['React', 'Sass', 'MongoDB', 'Node', 'Express', 'Lerna']}
         />
         <Project
@@ -78,9 +64,7 @@ const ProjectsPage: Component = () => {
           title="Odin Project - Landing Page"
           link="https://winstonco.org/odin-landing-page"
           date={{ start: new Date(2022, 10, 12), end: new Date(2022, 10, 13) }}
-          body="A project made while doing the Odin Project Foundations course.
-          It is a recreation of the Odin Project Landing Page using pure HTML and
-          CSS to strengthen my familiarity with basic frontend tools."
+          body="A project made while doing the Odin Project Foundations course. It is a recreation of the Odin Project Landing Page using pure HTML  and CSS to strengthen my familiarity with basic frontend tools."
           tags={['HTML', 'CSS']}
         />
         <Project
@@ -88,10 +72,7 @@ const ProjectsPage: Component = () => {
           title="Alerts Border Widget"
           link="https://alerts-border-widget.onrender.com"
           date={{ start: new Date(2022, 9, 15), end: new Date(2023, 0, 13) }}
-          body="A web-based widget to be used in OBS, displaying stream alerts
-          from Twitch such as follow notifications integrated with an animated
-          webcam background. Subscribes to Twitch's eventsub webhooks to listen
-          to events. Sends a custom message to the client through a Websocket."
+          body="A web-based widget to be used in OBS, displaying stream alerts from Twitch such as follow notifications integrated with an animated webcam background. Subscribes to Twitch's eventsub webhooks to listen to events. Sends a custom message to the client through a Websocket."
           tags={['HTML', 'CSS', 'Socket.io', 'Node', 'Express']}
         />
       </div>

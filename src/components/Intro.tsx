@@ -102,7 +102,9 @@ const Intro: Component<{
           <code class="code">=</code>
           <code class="code-string">"title"</code>
           <code class="code">&gt;</code>
-          <h1 class="title font-title">Hi, I'm Winston.</h1>
+          <code class="code-text">
+            <h1 class="title font-title">Hi, I'm Winston.</h1>
+          </code>
           <code class="code">&lt;/</code>
           <code class="code-keyword">h1</code>
           <code class="code">&gt;</code>
@@ -113,7 +115,9 @@ const Intro: Component<{
           <code class="code">=</code>
           <code class="code-string">"subtitle"</code>
           <code class="code">&gt;</code>
-          <h2 class="subtitle font-subtitle">Amateur Web Developer</h2>
+          <code class="code-text">
+            <h2 class="subtitle font-subtitle">Amateur Web Developer</h2>
+          </code>
           <code class="code">&lt;/</code>
           <code class="code-keyword">h2</code>
           <code class="code">&gt;</code>
