@@ -6,6 +6,8 @@ import searchHelperPng from '../../assets/images/projects/search-helper.png';
 import odinLandingPagePng from '../../assets/images/projects/odin-landing-page.png';
 import alertsBorderWidgetPng from '../../assets/images/projects/alerts-border-widget.png';
 import personalWebsitePng from '../../assets/images/projects/personal-website.png';
+import onuPng from '../../assets/images/projects/onu.png';
+import gomxPng from '../../assets/images/projects/gomx.png';
 
 import Container from '../../components/Container';
 import Project from '../../components/Project';
@@ -14,17 +16,6 @@ const ProjectsPage: Component = () => {
   return (
     <Container id="projects-page">
       <h1>Personal Projects</h1>
-      <p>
-        Here&apos;s a list of some projects I&apos;m proud of. There are a lot
-        more on my <a href="https://github.com/winstonco">GitHub</a> that
-        I&apos;ve started, but haven&apos;t finished yet.
-      </p>
-      <p>
-        One that I am currently working on is{' '}
-        <a href="https://github.com/winstonco/go-htmx">go-htmx</a>. I wanted to
-        make a simple web framework, with some nice features like file-based
-        routing.
-      </p>
       <div class="projects">
         {/* <Project
         img={nothingStore}
@@ -35,6 +26,22 @@ const ProjectsPage: Component = () => {
         tags={['TypeScript', 'Next.js', 'Tailwind CSS', 'Pocketbase (maybe)']}
         foot="In progress! 🛠️"
       /> */}
+        <Project
+          img={gomxPng}
+          title="GOMX"
+          link="https://github.com/gomxapp/gomx"
+          date={{ start: new Date(2023, 8, 30) }}
+          body="A full-stack web framework using Go, Go templates, HTMX, and Tailwind. Uses Go 1.22’s new router, with file-based routing and APIs. Includes a CLI app to scaffold new apps with a base app or an example app, or add a SQLite instance."
+          tags={['Go', 'htmx']}
+        />
+        <Project
+          img={onuPng}
+          title="ONU"
+          link="https://github.com/winston-and-co/onu"
+          date={{ start: new Date(2024, 2, 18), end: new Date(2024, 5, 9) }}
+          body="ONU is an UNO-themed roguelike deckbuilder heavily inspired by Slay the Spire and Balatro. I spearheaded the design and development of the game. It is the first real game I've made in Unity. The game is currently in alpha."
+          tags={['Unity', 'C#']}
+        />
         <Project
           img={personalWebsitePng}
           title="Personal Website"

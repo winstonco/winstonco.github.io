@@ -1,8 +1,13 @@
 import type { ParentComponent } from 'solid-js';
 
-const Container: ParentComponent<{ id?: string }> = (props) => {
+const Container: ParentComponent<{ id?: string; fluid?: boolean }> = (
+  props,
+) => {
   return (
-    <div class="custom-container" id={props.id}>
+    <div
+      class={'custom-container' + (props.fluid ? ' container-fluid' : '')}
+      id={props.id}
+    >
       {props.children}
     </div>
   );

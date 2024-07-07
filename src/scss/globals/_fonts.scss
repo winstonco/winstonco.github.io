@@ -1,29 +1,19 @@
 // Main website font: Open Sans
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 // Code font: JetBrains Mono
 @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap');
 // Other font: Roboto
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap');
-
-$font-bold: 700;
-$font-normal: 400;
-$font-light: 300;
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 @mixin article_title {
-  font-weight: $font-bold;
+  font-weight: bold;
   font-size: 2rem;
   text-decoration: none;
   color: $primary;
 }
 
-@mixin subsection_title {
-  font-weight: $font-normal;
-  font-size: 2rem;
-  color: $primary;
-}
-
 @mixin normal_text {
-  font-weight: $font-normal;
+  font-weight: normal;
   font-size: 1.8rem;
   color: $primary;
 }
@@ -31,13 +21,13 @@ $font-light: 300;
 .text {
   font-size: 1rem;
   &-light {
-    font-weight: $font-light;
+    font-weight: light;
   }
   &-normal {
-    font-weight: $font-normal;
+    font-weight: normal;
   }
   &-bold {
-    font-weight: $font-bold;
+    font-weight: bold;
   }
 }
 
@@ -59,13 +49,9 @@ $font-light: 300;
   color: $lighter;
 }
 
-.font-subsection-title {
-  @include subsection_title;
-}
-
 .code {
   font-size: 1.5rem;
-  font-weight: $font-bold;
+  font-weight: bold;
   font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
   color: rgb(221, 221, 221);
   position: relative;
@@ -120,6 +106,10 @@ h6 {
 }
 
 p {
+  margin-bottom: 1rem;
+}
+
+ul {
   margin-bottom: 1rem;
 }
 

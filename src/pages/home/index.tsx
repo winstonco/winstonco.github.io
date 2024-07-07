@@ -5,33 +5,41 @@ import { AiOutlineMail, AiFillGithub } from 'solid-icons/ai';
 
 // assets
 import portraitSquarePng from '../../assets/images/portrait-square.png';
+import goSvg from '../../assets/svg/go.svg';
 import typescriptSvg from '../../assets/svg/typescript.svg';
-import javascriptSvg from '../../assets/svg/javascript.svg';
+// import javascriptSvg from '../../assets/svg/javascript.svg';
 import reactSvg from '../../assets/svg/react.svg';
 import nodeJsSvg from '../../assets/svg/nodejs.svg';
 import html5Svg from '../../assets/svg/html5.svg';
 import vsCodeSvg from '../../assets/svg/vscode.svg';
+import neovimSvg from '../../assets/svg/neovim.svg';
+
+import emailSvg from '../../assets/svg/email.svg';
+import githubSvg from '../../assets/svg/github.svg';
 import linkedInSvg from '../../assets/svg/linkedin.svg';
 // import twitchSvg from '../../assets/svg/twitch.svg';
 
-import Todo from '../../components/Todo';
 import Container from '../../components/Container';
+import Page from '../../components/Page';
+
+type Proficiency = 'proficient' | 'intermediate' | 'beginner';
 
 const HomePage: Component = () => {
-  const [shownSkill, setShownSkill] = createSignal('');
-
-  const createSkill: (details: {
-    name: string;
-    level: 'proficient' | 'intermediate' | 'beginner';
+  let nextSkillId = 0;
+  const [shownSkill, setShownSkill] = createSignal(-1);
+  const SkillItem: Component<{
+    name?: string;
+    level: Proficiency;
     description: string;
     icon?: JSX.Element;
-  }) => JSX.Element = ({ name, level, description, icon }) => {
+  }> = ({ name, level, description, icon }) => {
+    const skillId = nextSkillId++;
     return (
-      <div class={`skill${shownSkill() === name ? ' expanded' : ''}`}>
+      <div class={`skill${shownSkill() === skillId ? ' expanded' : ''}`}>
         <h4
           class="title"
           onClick={() => {
-            setShownSkill(shownSkill() === name ? '' : name);
+            setShownSkill(shownSkill() === skillId ? -1 : skillId);
           }}
         >
           {icon}
@@ -47,106 +55,116 @@ const HomePage: Component = () => {
     );
   };
 
+  const blobMaskSvg = `url(/blob-${Math.floor(Math.random() * 3)}.svg)`;
+
   return (
-    <Container id="home-page">
-      <section id="about-me" class="home-page-section">
-        <img
-          class="portrait"
-          aria-label="Picture of me"
-          src={portraitSquarePng}
-          draggable={false}
-        />
-        <h3 class="font-subsection-title">About Me</h3>
-        <div class="body">
-          <p>
-            I'm a senior at the University of Hawai'i at Manoa, majoring in
-            Computer Science. I love learning new technologies and working on
-            personal projects. I'm aiming to be a full-stack developer, if those
-            still exist in the future 😅.
-          </p>
-          <h4>📖 What I'm working on:</h4>
-          <ul>
-            <li>A Go-HTMX web app framework</li>
-            <li>A Flutter app called "Today I Learned"</li>
-            <li>Chugging through the Rust book...very slowly</li>
-          </ul>
-        </div>
+    <Page id="home-page">
+      <section id="about-me-wrapper">
+        <Container id="about-me">
+          <img
+            class="portrait"
+            aria-label="Picture of me"
+            src={portraitSquarePng}
+            draggable={false}
+            style={{
+              'mask-image': blobMaskSvg,
+            }}
+          />
+          <div class="body">
+            <h3 id="name" class="section-title">
+              Winston Co
+            </h3>
+            <p>
+              I'm an aspiring full-stack software developer. I graduated in
+              Spring 2024 with a BS in Computer Science from the University of
+              Hawai'i at Manoa. I'm a fast and eager learner with a tenacious
+              work ethic.
+            </p>
+            <div id="contact-links">
+              <a href="mailto: winstonco@live.com" class="contact-method">
+                <img src={emailSvg} alt="Email icon" />{' '}
+              </a>
+              <a
+                href="https://github.com/winstonco/"
+                target="_blank"
+                class="contact-method"
+              >
+                <img src={githubSvg} alt="GitHub logo" />{' '}
+              </a>
+              <a
+                href="https://linkedin.com/in/winston-co/"
+                target="_blank"
+                class="contact-method"
+              >
+                <img src={linkedInSvg} alt="LinkedIn logo" />{' '}
+              </a>
+            </div>
+          </div>
+        </Container>
       </section>
-      <section id="skills" class="home-page-section">
-        <h3 class="font-subsection-title">Skills</h3>
-        <div class="skills-row">
-          {createSkill({
-            name: 'TypeScript',
-            icon: <img src={typescriptSvg} alt="TypeScript logo" />,
-            level: 'intermediate',
-            description:
-              "TypeScript is my favorite language. After first learning JS and trying TypeScript, I could never go back! Adding strong typing to JS was probably one of mankind's smartest decisions, next to bidets. There are many tricks and small features I need to learn before I can call myself a true TypeScript wizard.",
-          })}
-          {createSkill({
-            name: 'JavaScript',
-            icon: <img src={javascriptSvg} alt="JavaScript logo" />,
-            level: 'proficient',
-            description:
-              "JavaScript is my 2nd favorite language (if it counts as different from TS) and the language I am most proficient in. It's the language I used when I first focused on learning to code. I am familiar with ES6 syntax, and many newer features.",
-          })}
-          {createSkill({
-            name: 'React',
-            icon: <img src={reactSvg} alt="React logo" />,
-            level: 'proficient',
-            description:
-              "React is my frontend framework of choice. I've made many projects using React, in both JavaScript and TypeScript. I'm very familiar with the fundamentals of React, such as state management, hooks, function components, etc. One thing I want to learn is using server components.",
-          })}
-        </div>
-        <div class="skills-row">
-          {createSkill({
-            name: 'NodeJS',
-            icon: <img src={nodeJsSvg} alt="NodeJS logo" />,
-            level: 'beginner',
-            description:
-              'When writing for backend, I am most familiar with NodeJS. I am still a beginner at using it, but am eager to continue learning.',
-          })}
-          {createSkill({
-            name: 'HTML + CSS',
-            icon: <img src={html5Svg} alt="HTML5 logo" />,
-            level: 'intermediate',
-            description:
-              "I am comfortable working with plain HTML and CSS. I'd label myself as 'intermediate' because I am still learning how to write good, semantic HTML, that supports web accessibility. I'm also always learning new tricks with CSS.",
-          })}
-          {createSkill({
-            name: 'VSCode',
-            icon: <img src={vsCodeSvg} alt="VSCode logo" />,
-            level: 'proficient',
-            description:
-              "VSCode is my go-to text editor for writing code. I've been using it since I started learning to code, and love the customizability it provides. I'm constantly learning new shortcuts and finding new plugins that improve my productivity.",
-          })}
-        </div>
-        <Todo todo="Add Go and Neovim" />
-      </section>
-      <section id="contact" class="home-page-section">
-        <h3 class="font-subsection-title">Contact Me</h3>
-        <div class="contact-methods">
-          <a href="mailto: winstonco@live.com" class="contact-method">
-            <AiOutlineMail /> <span>winstonco@live.com</span>
-          </a>
-        </div>
-      </section>
-      <section id="more" class="home-page-section">
-        <h3 class="font-subsection-title">More Links...</h3>
-        <small>They are in the footer too!</small>
-        <div class="contact-methods">
-          <a href="https://github.com/winstonco/" class="contact-method">
-            <AiFillGithub /> <span>github.com/winstonco</span>
-          </a>
-          <a href="https://linkedin.com/in/winston-co/" class="contact-method">
-            <img src={linkedInSvg} alt="Linked-In logo" />{' '}
-            <span>linkedin.com/in/winston-co</span>
-          </a>
-          {/* <a href="https://twitch.tv/frostfireftw/" class="contact-method">
-            <img src={twitchSvg} alt="Twitch Logo" /> <span>frostfireftw</span>
-          </a> */}
-        </div>
-      </section>
-    </Container>
+      <img src="/wave.svg" alt="" srcset="" />
+      <Container>
+        <section id="skills" class="home-page-section">
+          <div class="skills-row">
+            <SkillItem
+              icon={<img src={goSvg} alt="Go logo" />}
+              level="beginner"
+              description="As I use it more, Go is becoming my favorite language. I love the Go team's dedication to making a simple, yet powerful langauge. I actually really like Go's error handling. And of course I like its extensive standard library. I'm still very much a beginner to the language (I haven't done anything yet with goroutines), but I know I will continue to enjoy using it and learning it."
+            />
+            <SkillItem
+              icon={<img src={typescriptSvg} alt="TypeScript logo" />}
+              level="intermediate"
+              description="TypeScript (and by proxy JavaScript) is my most used, and possibly favorite language. I am very familiar with ES6 syntax, and most newer features. Though I've used TS the longest of any language, I wouldn't call myself proficient yet, since there are many tricks and small features I need to learn."
+            />
+            <SkillItem
+              icon={<img src={reactSvg} alt="React logo" />}
+              level="proficient"
+              description="React is my frontend framework of choice (even though this site uses Solid). I've made many projects using React, in both JavaScript and TypeScript. I'm very familiar with the fundamentals of React, such as state management, hooks, function components, etc. One thing I want to learn is using server components."
+            />
+            <SkillItem
+              icon={<img src={nodeJsSvg} alt="NodeJS logo" />}
+              level="beginner"
+              description="When writing for backend, I am most familiar with NodeJS. I am still a beginner at using it, but am eager to continue learning."
+            />
+            <SkillItem
+              icon={<img src={html5Svg} alt="HTML5 logo" />}
+              level="intermediate"
+              description="I am comfortable working with plain HTML and CSS. I'd label myself as 'intermediate' because I am still learning how to write good, semantic HTML, that supports web accessibility. I'm also always learning new tricks with CSS."
+            />
+            <SkillItem
+              icon={<img src={vsCodeSvg} alt="VSCode logo" />}
+              level="proficient"
+              description="VSCode is my go-to text editor for writing code. I've been using it since I started learning to code, and love the customizability it provides. I'm constantly learning new shortcuts and finding new plugins that improve my productivity."
+            />
+            <SkillItem
+              icon={<img src={neovimSvg} alt="Neovim logo" />}
+              level="beginner"
+              description="While I already use Vim motions in VSCode or JetBrains editors, I've been trying to make my own Neovim config and start using it as my main editor. It's still a long way to go, and I struggle with customizing it exactly how I want."
+            />
+          </div>
+        </section>
+        <section class="home-page-section">
+          <h3 class="section-title">a little more about me</h3>
+          <div class="body">
+            <p>
+              I also like bouldering and doing the dles. I like trying "new"
+              tech (if you can count Go as new) and bouncing around on personal
+              projects.
+            </p>
+            <p style="margin-bottom: 0;">Here's some extra ideas:</p>
+            <ul>
+              <li>A -dles leaderboard with maybe a Chrome extension</li>
+              <li>Slay the Spire-dle</li>
+              <li>AI Pokemon where every single thing is generated</li>
+            </ul>
+            <p style="margin-bottom: 1rem;">
+              P.S. If you make one of these, please tell me because I'd love to
+              see it.
+            </p>
+          </div>
+        </section>
+      </Container>
+    </Page>
   );
 };
 
