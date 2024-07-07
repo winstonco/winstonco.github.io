@@ -27,7 +27,7 @@ const Footer: Component = () => {
           class="color_lighter"
           style={{ 'margin-bottom': 0, 'margin-right': '1rem' }}
         >
-          © 2023
+          © 2024
         </p>
       </div>
     </footer>

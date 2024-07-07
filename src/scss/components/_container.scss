@@ -5,25 +5,31 @@
   height: 100%;
   max-width: 540px;
 
-  @media (max-width: 749px) {
+  @media (max-width: calc($pg-md - 1px)) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 
-  @media (min-width: 750px) {
-    max-width: 710px;
+  @media (min-width: $pg-md) {
+    max-width: calc($pg-md - 40px);
   }
 
-  @media (min-width: 900px) {
-    max-width: 860px;
+  @media (min-width: $pg-lg) {
+    max-width: calc($pg-lg - 40px);
   }
 
-  @media (min-width: 1100px) {
-    max-width: 1000px;
+  @media (min-width: $pg-xl) {
+    max-width: calc($pg-xl - 100px);
   }
 
-  @media (min-width: 1300px) {
+  @media (min-width: $pg-xxl) {
     --side-padding: auto;
-    max-width: 1200px;
+    max-width: calc($pg-xxl - 100px);
+  }
+
+  &.container-fluid {
+    margin-left: 0;
+    margin-right: 0;
+    max-width: none;
   }
 }

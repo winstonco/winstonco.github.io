@@ -30,36 +30,34 @@ const App: Component = () => {
     body?.style.removeProperty('overflow');
   };
 
-  onMount(() => {
-    if (!document.getElementById('intro-all')) {
-      render(
-        () => (
-          <>
-            <div
-              id="custom-offcanvas-fade"
-              style={{ opacity: introIsDown() ? 0.5 : 0 }}
-            ></div>
-            <Intro isDown={introIsDown} hideIntro={hideIntro} />
-          </>
-        ),
-        document.getElementById('custom-offcanvas')!,
-      );
-    }
-  });
+  // onMount(() => {
+  //   if (!document.getElementById('intro-all')) {
+  //     render(
+  //       () => (
+  //         <>
+  //           <div
+  //             id="custom-offcanvas-fade"
+  //             style={{ opacity: introIsDown() ? 0.5 : 0 }}
+  //           ></div>
+  //           <Intro isDown={introIsDown} hideIntro={hideIntro} />
+  //         </>
+  //       ),
+  //       document.getElementById('custom-offcanvas')!,
+  //     );
+  //   }
+  // });
 
   return (
     <>
       {/* <Intro isDown={introIsDown} setIsDown={setIntroIsDown} /> */}
       <div class="App">
         <Header />
-        <div class="main">
-          <PullIntro isDown={introIsDown} showIntro={showIntro} />
-          <Routes>
-            <Route path="/" component={HomePage} />
-            <Route path="/projects" component={ProjectsPage} />
-            <Route path="/*" component={NotFoundPage} />
-          </Routes>
-        </div>
+        {/* <PullIntro isDown={introIsDown} showIntro={showIntro} /> */}
+        <Routes>
+          <Route path="/" component={HomePage} />
+          <Route path="/projects" component={ProjectsPage} />
+          <Route path="/*" component={NotFoundPage} />
+        </Routes>
         <Footer />
       </div>
     </>

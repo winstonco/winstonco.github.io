@@ -1,6 +1,9 @@
 import type { Component } from 'solid-js';
 
 const Todo: Component<{ todo?: string }> = (props = { todo: '' }) => {
+  if (import.meta.env.MODE !== 'development') {
+    return undefined;
+  }
   return (
     <div class="todo">
       <p
