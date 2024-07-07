@@ -1,8 +1,6 @@
 import type { Component, JSX } from 'solid-js';
 import { createSignal } from 'solid-js';
 
-import { AiOutlineMail, AiFillGithub } from 'solid-icons/ai';
-
 // assets
 import portraitSquarePng from '../../assets/images/portrait-square.png';
 import goSvg from '../../assets/svg/go.svg';

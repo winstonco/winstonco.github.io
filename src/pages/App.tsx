@@ -1,34 +1,34 @@
-import { render } from 'solid-js/web';
+// import { render } from 'solid-js/web';
 import type { Component } from 'solid-js';
-import { onMount, createSignal, lazy } from 'solid-js';
+import { lazy } from 'solid-js';
 import { Routes, Route } from '@solidjs/router';
 
 const HomePage = lazy(() => import('./home'));
 const ProjectsPage = lazy(() => import('./projects'));
 const NotFoundPage = lazy(() => import('./not-found'));
 
-import Intro from '../components/Intro';
+// import Intro from '../components/Intro';
 import Header from '../components/Header';
-import PullIntro from '../components/PullIntro';
+// import PullIntro from '../components/PullIntro';
 import Footer from '../components/Footer';
 
 const App: Component = () => {
-  const [introIsDown, setIntroIsDown] = createSignal(
-    sessionStorage.getItem('introIsDown') === null,
-  );
+  // const [introIsDown, setIntroIsDown] = createSignal(
+  //   sessionStorage.getItem('introIsDown') === null,
+  // );
 
-  const showIntro = () => {
-    setIntroIsDown(true);
-    const body = document.querySelector('body');
-    body?.style.setProperty('overflow', 'hidden');
-  };
+  // const showIntro = () => {
+  //   setIntroIsDown(true);
+  //   const body = document.querySelector('body');
+  //   body?.style.setProperty('overflow', 'hidden');
+  // };
 
-  const hideIntro = () => {
-    setIntroIsDown(false);
-    sessionStorage.setItem('introIsDown', 'false');
-    const body = document.querySelector('body');
-    body?.style.removeProperty('overflow');
-  };
+  // const hideIntro = () => {
+  //   setIntroIsDown(false);
+  //   sessionStorage.setItem('introIsDown', 'false');
+  //   const body = document.querySelector('body');
+  //   body?.style.removeProperty('overflow');
+  // };
 
   // onMount(() => {
   //   if (!document.getElementById('intro-all')) {
