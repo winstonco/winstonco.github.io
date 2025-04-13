@@ -1,10 +1,10 @@
 body {
-  @media screen and (max-width: 576px) {
+  @media screen and (max-width: $pg-sm) {
     &::-webkit-scrollbar {
       width: 0px;
     }
   }
-  @media screen and (min-width: 576px) {
+  @media screen and (min-width: $pg-sm) {
     &::-webkit-scrollbar {
       width: 4px;
     }
@@ -21,12 +21,4 @@ body {
   background-color: $background;
   display: flex;
   flex-direction: column;
-}
-
-.main {
-  $header-height: $navbar-height;
-  margin-top: $header-height;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  position: relative;
 }
