@@ -11,3 +11,4 @@ Deployment
 ```bash
 npm run deploy
 ```
+Deploy updated site from gh-pages branch
