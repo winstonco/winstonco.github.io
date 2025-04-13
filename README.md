@@ -2,13 +2,10 @@
 
 ## Docs
 
-Development
+### Development
 ```bash
 npm run dev
 ```
 
-Deployment
-```bash
-npm run deploy
-```
-Deploy updated site from gh-pages branch
+### Deployment
+Just push to main :)
