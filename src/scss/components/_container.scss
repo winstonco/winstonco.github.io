@@ -15,16 +15,16 @@
   }
 
   @media (min-width: $pg-lg) {
-    max-width: calc($pg-lg - 40px);
+    max-width: calc($pg-lg - 80px);
   }
 
   @media (min-width: $pg-xl) {
-    max-width: calc($pg-xl - 100px);
+    max-width: calc($pg-xl - 160px);
   }
 
   @media (min-width: $pg-xxl) {
     --side-padding: auto;
-    max-width: calc($pg-xxl - 100px);
+    max-width: calc($pg-xxl - 320px);
   }
 
   &.container-fluid {

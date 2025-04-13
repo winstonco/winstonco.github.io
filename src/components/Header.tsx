@@ -40,7 +40,7 @@ const Header: Component = () => {
   return (
     <header>
       <Show when={expanded()}>
-        <div class="custom-navbar">
+        <nav class="custom-navbar">
           <Container>
             <div class="nav-items">
               <For each={links}>
@@ -52,7 +52,7 @@ const Header: Component = () => {
               </For>
             </div>
           </Container>
-        </div>
+        </nav>
       </Show>
       <Sidebar navBarExpanded={expanded} links={links} />
     </header>

@@ -1,0 +1,30 @@
+body {
+  @media screen and (max-width: $pg-sm) {
+    &::-webkit-scrollbar {
+      width: 0px;
+    }
+  }
+  @media screen and (min-width: $pg-sm) {
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: $primary;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: $white;
+    }
+  }
+}
+
+.App {
+  background-color: $background;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+
+  color: $black;
+  background-color: $background;
+
+  overflow-x: hidden;
+}
