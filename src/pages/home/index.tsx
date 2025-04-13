@@ -1,5 +1,4 @@
-import type { Component, JSX } from 'solid-js';
-import { createEffect, createSignal, onCleanup } from 'solid-js';
+import type { Component } from 'solid-js';
 
 // assets
 import portraitSquarePng from '../../assets/images/winston1-square.png';

@@ -1,5 +1,5 @@
-import { defineConfig } from 'vite'
-import solid from 'vite-plugin-solid'
+import { defineConfig } from 'vite';
+import solid from 'vite-plugin-solid';
 import { resolve } from 'path';
 
 const root = resolve(__dirname, 'src/pages');
@@ -14,8 +14,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(root, 'index.html'),
-        'pie-splitter': resolve(root, 'pie-splitter', 'index.html'),
+        // add new pages like this: (i think)
+        // `name`: resolve(root, `path`, `file`)
       },
     },
   },
-})
+});
