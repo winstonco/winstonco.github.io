@@ -4,16 +4,14 @@ const Project: Component<{
   img: string;
   title: string;
   link: string;
-  date: { start: Date; end?: Date };
+  date: { start: string; end?: string };
   body: string;
   tags: string[];
   foot?: string;
 }> = (props) => {
   const { img, title, link, date, body, tags, foot } = props;
   const datePart = () => {
-    return `${date.start.toLocaleDateString()} - ${
-      date.end?.toLocaleDateString() ?? 'Today'
-    }`;
+    return `${date.start} - ${date.end ?? 'Today'}`;
   };
 
   return (

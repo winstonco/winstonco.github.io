@@ -5,28 +5,18 @@
 // Other font: Roboto
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-@mixin article_title {
-  font-weight: bold;
-  font-size: 2rem;
-  text-decoration: none;
-  color: $primary;
-}
-
-@mixin normal_text {
-  font-weight: normal;
-  font-size: 1.8rem;
-  color: $primary;
-}
-
 .text {
-  font-size: 1rem;
+  font-size: 1.1rem;
   &-light {
+    @extend .text;
     font-weight: light;
   }
   &-normal {
+    @extend .text;
     font-weight: normal;
   }
   &-bold {
+    @extend .text;
     font-weight: bold;
   }
 }
@@ -40,7 +30,9 @@
 }
 
 .font-article-title {
-  @include article_title;
+  font-weight: bold;
+  font-size: 2rem;
+  text-decoration: none;
 }
 
 .font-date {

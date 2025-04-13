@@ -1,5 +1,6 @@
 footer {
-  background: $background-secondary;
+  background: $primary;
+  color: $secondary;
   width: 100%;
   margin-top: auto;
 
@@ -17,14 +18,14 @@ footer {
     svg {
       width: 20px;
       height: 20px;
-      fill: $primary;
+      fill: $white;
       text-align: center;
       transition: 100ms ease-in-out;
     }
 
     &:hover {
       svg {
-        fill: lighten($primary, 30%);
+        fill: $secondary;
       }
     }
   }

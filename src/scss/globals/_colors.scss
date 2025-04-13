@@ -1,9 +1,12 @@
-$primary: #181d2a;
+$black: #080804;
+$white: #fffff0;
+$primary: #0e1c07;
 $dark: $primary;
 $lighter: lighten($primary, 30%);
-$secondary: #014483;
-$background: #fffefb;
-$background_secondary: rgb(193, 221, 243);
+$secondary: #a3be73;
+$accent: #251209;
+$background: $white;
+$background_secondary: $black;
 
 .color-primary {
   color: $primary;

@@ -1,11 +1,10 @@
 // import { render } from 'solid-js/web';
 import type { Component } from 'solid-js';
-import { lazy } from 'solid-js';
 import { Routes, Route } from '@solidjs/router';
 
-const HomePage = lazy(() => import('./home'));
-const ProjectsPage = lazy(() => import('./projects'));
-const NotFoundPage = lazy(() => import('./not-found'));
+import HomePage from './home';
+import ProjectsPage from './projects';
+import NotFoundPage from './not-found';
 
 // import Intro from '../components/Intro';
 import Header from '../components/Header';

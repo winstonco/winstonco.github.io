@@ -1,31 +1,40 @@
 #home-page {
   background-color: $background;
 
-  #about-me-wrapper {
-    background: rgb(229, 249, 255);
+  #hero-wrapper {
+    color: $secondary;
+    background: $primary;
     padding: 2rem 0;
   }
 
-  #about-me {
+  #hero {
     display: flex;
     flex-direction: column;
+    align-items: center;
     @media (min-width: $pg-lg) {
-      flex-direction: row-reverse;
-      align-items: center;
+      flex-direction: row;
       gap: 3rem;
     }
 
     .portrait {
-      // border-radius: 50%;
       object-fit: cover;
       width: 100%;
       // mask-image randomly generated
       mask-size: contain;
       mask-repeat: no-repeat;
       @media (min-width: $pg-xs) {
-        width: 400px;
+        width: 350px;
       }
     }
+  }
+
+  .header-svg {
+    // primary color
+    filter: brightness(0) saturate(100%) invert(9%) sepia(88%) saturate(322%)
+      hue-rotate(56deg) brightness(94%) contrast(102%);
+    // secondary color
+    // filter: brightness(0) saturate(100%) invert(79%) sepia(14%) saturate(914%)
+    //   hue-rotate(40deg) brightness(89%) contrast(90%);
   }
 
   #contact-links {
@@ -33,6 +42,10 @@
     flex-direction: row;
     align-items: center;
     gap: 1rem;
+    width: fit-content;
+    padding: 0.5rem 1rem;
+    border-radius: 1000px;
+    background: $secondary;
 
     img {
       width: 2rem;
@@ -45,7 +58,18 @@
     font-weight: 700;
   }
 
+  // main section below
+
+  main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+  }
+
   .home-page-section {
+    width: 100%;
+    max-width: 800px;
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
@@ -53,134 +77,27 @@
 
   .section-title {
     font-weight: 500;
-    color: $primary;
   }
 
   .body {
-    max-width: 780px;
     p {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
   }
 
   #skills {
-    align-items: center;
-    .skills-row {
-      width: 100%;
-      max-width: $pg-lg;
-      display: flex;
-      justify-content: space-evenly;
-      gap: 1rem;
-      margin-bottom: 2rem;
-
-      @media screen and (max-width: $pg-md) {
-        flex-direction: column;
-      }
-
-      .skill {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        flex: 0;
-        max-height: 230px;
-
-        &,
-        .body,
-        .body > .desc,
-        .title {
-          transition: 150ms ease-in-out;
-        }
-
-        .title {
-          display: flex;
-          align-items: center;
-          gap: 6px;
-          cursor: pointer;
-          width: max-content;
-
-          img,
-          svg {
-            height: 3rem;
-          }
-        }
-
-        .body {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          width: 0;
-          height: 0;
-          overflow: hidden;
-
-          .level {
-            font-family: monospace;
-
-            &-proficient {
-              color: rgb(0, 170, 0);
-            }
-
-            &-intermediate {
-              color: rgb(0, 15, 155);
-            }
-
-            &-beginner {
-              color: rgb(192, 115, 0);
-            }
-          }
-
-          .desc {
-            // width: fit-content;
-            width: 100%;
-            height: 0;
-            @media screen and (max-width: $pg-md) {
-              width: 100%;
-            }
-            text-align: justify;
-          }
-        }
-
-        &.expanded {
-          .body {
-            width: 100%;
-            // height: 100%;
-            height: min(100%, 300px);
-            .desc {
-              height: 100%;
-            }
-          }
-          flex: 1;
-        }
-      }
+    .body {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      justify-items: center;
+      align-items: center;
     }
-  }
 
-  #contact,
-  #more {
-    .contact-methods {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-
-      .contact-method {
-        display: flex;
-        align-items: center;
-        gap: 0.5rem;
-
-        font-size: 1.2rem;
-        text-decoration: none;
-
-        &:hover {
-          span {
-            text-decoration: underline;
-          }
-        }
-
-        svg,
-        img {
-          width: 24px;
-          height: 24px;
-        }
-      }
+    .skill {
+      flex: 0;
+      width: 100%;
+      max-height: 230px;
+      height: 3rem;
     }
   }
 }
